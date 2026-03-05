@@ -17,19 +17,20 @@ import workshop05 from '../assets/images/workshop05.jpg';
 import workshop06 from '../assets/images/workshop06.jpg';
 import workshop07 from '../assets/images/workshop07.jpg';
 import workshop08 from '../assets/images/workshop08.jpg';
+import { TEXT_LONG, TEXT_SHORT } from '../constants/texts';
 import './Treinamentos.css';
 
 const courseTopics = [
-  { icon: icon01, title: 'Insights Concepts', text: 'Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.' },
-  { icon: icon02, title: 'Insights Concepts', text: 'Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.' },
-  { icon: icon03, title: 'Insights Concepts', text: 'Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.' },
-  { icon: icon04, title: 'Insights Concepts', text: 'Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.' },
+  { icon: icon01, title: 'Insights Concepts', text: TEXT_SHORT },
+  { icon: icon02, title: 'Insights Concepts', text: TEXT_SHORT },
+  { icon: icon03, title: 'Insights Concepts', text: TEXT_SHORT },
+  { icon: icon04, title: 'Insights Concepts', text: TEXT_SHORT },
 ];
 
 const demandSteps = [
-  { title: 'Insights Concepts', text: 'Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.' },
-  { title: 'Insights Concepts', text: 'Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.' },
-  { title: 'Insights Concepts', text: 'Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.' },
+  { title: 'Insights Concepts', text: TEXT_SHORT },
+  { title: 'Insights Concepts', text: TEXT_SHORT },
+  { title: 'Insights Concepts', text: TEXT_SHORT },
 ];
 
 const workshops = [workshop01, workshop02, workshop03, workshop04, workshop05, workshop06, workshop07, workshop08];
@@ -40,7 +41,7 @@ export default function Treinamentos() {
       <HeroBanner
         sectionLabel="Serviços"
         title="Treinamentos"
-        subtitle="Sollicitudin eros nulla mus donec quisque convallis integer condimentum volutpat."
+        subtitle={TEXT_SHORT}
         image={headerTraining}
       />
 
@@ -67,7 +68,7 @@ export default function Treinamentos() {
         <div className="container">
           <SectionLabel className="treinamentos-demand-label">Cursos on Demand</SectionLabel>
           <h2>Cursos on Demand</h2>
-          <p className="treinamentos-demand-sub">Sollicitudin eros nulla mus donec quisque convallis integer condimentum volutpat.</p>
+          <p className="treinamentos-demand-sub">{TEXT_SHORT}</p>
           <div className="treinamentos-demand-grid">
             {demandSteps.map((step, i) => (
               <div key={i} className="treinamentos-demand-item">
@@ -92,10 +93,10 @@ export default function Treinamentos() {
             <SectionLabel>Treinamentos</SectionLabel>
             <h2>Cursos Online</h2>
             <p>
-              Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing. Consequat enim mollis mauris vulputate phasellus neque.
+              {TEXT_LONG}
             </p>
             <p>
-              Eros turpis et eu adipiscing id tempor. Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing.
+              {TEXT_LONG}
             </p>
             <Link to="/contato" className="btn-primary">Cta Botton</Link>
           </div>
@@ -108,10 +109,10 @@ export default function Treinamentos() {
             <SectionLabel>Treinamentos</SectionLabel>
             <h2>in Company</h2>
             <p>
-              Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing. Consequat enim mollis mauris vulputate phasellus neque.
+              {TEXT_LONG}
             </p>
             <p>
-              Eros turpis et eu adipiscing id tempor. Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing.
+              {TEXT_LONG}
             </p>
             <Link to="/contato" className="btn-primary">Cta Botton</Link>
           </div>

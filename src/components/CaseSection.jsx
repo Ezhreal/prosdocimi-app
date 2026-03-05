@@ -3,12 +3,13 @@ import imgCase01 from '../assets/images/img-case01.jpg';
 import imgCase02 from '../assets/images/img-case02.jpg';
 import imgCase03 from '../assets/images/img-case03.jpg';
 import imgCase04 from '../assets/images/img-case04.jpg';
+import { TEXT_LONG, TEXT_SHORT } from '../constants/texts';
 import './CaseSection.css';
 
 const insights = [
-  { title: 'Insights Concepts', text: 'Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.' },
-  { title: 'Insights Concepts', text: 'Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.' },
-  { title: 'Insights Concepts', text: 'Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.' },
+  { title: 'Insights Concepts', text: TEXT_SHORT },
+  { title: 'Insights Concepts', text: TEXT_SHORT },
+  { title: 'Insights Concepts', text: TEXT_SHORT },
 ];
 
 export default function CaseSection() {
@@ -20,7 +21,7 @@ export default function CaseSection() {
             <SectionLabel>Nosso Trabalho</SectionLabel>
             <h2>Case Nome do Projeto</h2>
             <p className="case-desc">
-              Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing. Consequat enim mollis mauris vulputate phasellus neque.
+              {TEXT_LONG}
             </p>
             <div className="case-insights">
               {insights.map((item, i) => (

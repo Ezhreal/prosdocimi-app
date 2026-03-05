@@ -9,6 +9,7 @@ import iconMission from '../assets/images/icon-mission.png';
 import iconVision from '../assets/images/icon-vision.png';
 import iconValues from '../assets/images/icon-values.png';
 import iconHow from '../assets/images/icon-how-we-do.png';
+import { TEXT_LONG, TEXT_SHORT } from '../constants/texts';
 import './Sobre.css';
 
 export default function Sobre() {
@@ -17,7 +18,7 @@ export default function Sobre() {
       <HeroBanner
         sectionLabel="Sobre"
         title="A Prosdocimi"
-        subtitle="Sollicitudin eros nulla mus donec quisque convallis integer condimentum volutpat."
+        subtitle={TEXT_SHORT}
         showLine
       />
 
@@ -29,10 +30,10 @@ export default function Sobre() {
             </div>
             <div className="sobre-apresentacao-right">
               <p>
-                Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing. Consequat enim mollis mauris vulputate phasellus neque.
+                {TEXT_LONG}
               </p>
               <p>
-                Eros turpis et eu adipiscing id tempor. Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing.
+                {TEXT_LONG}
               </p>
               <hr />
               <Link to="/contato" className="sobre-link">Vamos trabalhar juntos →</Link>
@@ -47,17 +48,17 @@ export default function Sobre() {
             <div className="sobre-mvv-item">
               <img src={iconMission} alt="" width={32} height={32} />
               <h3>Missão</h3>
-              <p>Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing.</p>
+              <p>{TEXT_SHORT}</p>
             </div>
             <div className="sobre-mvv-item">
               <img src={iconVision} alt="" width={32} height={32} />
               <h3>Visão</h3>
-              <p>Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing.</p>
+              <p>{TEXT_SHORT}</p>
             </div>
             <div className="sobre-mvv-item">
               <img src={iconValues} alt="" width={32} height={32} />
               <h3>Valores</h3>
-              <p>Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing.</p>
+              <p>{TEXT_SHORT}</p>
             </div>
           </div>
         </div>
@@ -72,20 +73,20 @@ export default function Sobre() {
             <div className="sobre-card sobre-card-teal">
               <img src={iconHow} alt="" width={32} height={32} />
               <h3>Consultoria estratégica</h3>
-              <p>Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.</p>
+              <p>{TEXT_SHORT}</p>
             </div>
             <div className="sobre-card sobre-card-white">
               <img src={iconHow} alt="" width={32} height={32} />
               <h3>Auditoria responsável</h3>
-              <p>Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.</p>
+              <p>{TEXT_SHORT}</p>
             </div>
             <div className="sobre-card sobre-card-navy">
               <img src={iconHow} alt="" width={32} height={32} />
               <h3>Treinamento e Palestras</h3>
-              <p>Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus.</p>
+              <p>{TEXT_SHORT}</p>
             </div>
           </div>
-          <p className="sobre-cards-extra">Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing.</p>
+          <p className="sobre-cards-extra">{TEXT_SHORT}</p>
         </div>
       </section>
 
@@ -96,7 +97,7 @@ export default function Sobre() {
         <div className="container">
           <span className="sobre-citacao-quote">"</span>
           <p className="sobre-citacao-p">
-            Consequat enim mollis mauris vulputate phasellus neque, eros turpis et eu adipiscing id tempor
+            {TEXT_SHORT}
           </p>
         </div>
       </section>
@@ -111,7 +112,7 @@ export default function Sobre() {
               <SectionLabel className="sobre-alexandre-label">Alexandre Prosdocimi</SectionLabel>
               <h2>Alexandre Prosdocimi</h2>
               <p>
-                Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing. Consequat enim mollis mauris vulputate phasellus neque, eros turpis et eu adipiscing id tempor.
+                {TEXT_LONG}
               </p>
               <Link to="/contato" className="btn-outline-white">Cta botton</Link>
             </div>

@@ -6,6 +6,8 @@ import CaseSection from '../components/CaseSection';
 import TestimonialBlock from '../components/TestimonialBlock';
 import headerServices from '../assets/images/header-services.jpg';
 import casesPortfolio from '../assets/images/cases-portfolio.png';
+import lineBg from '../assets/images/line-background-blue.png';
+import { TEXT_LONG, TEXT_SHORT } from '../constants/texts';
 import './ServicePage.css';
 
 export default function ServicePage({ heroTitle, sectionLabel = 'Serviços' }) {
@@ -14,7 +16,7 @@ export default function ServicePage({ heroTitle, sectionLabel = 'Serviços' }) {
       <HeroBanner
         sectionLabel={sectionLabel}
         title={heroTitle}
-        subtitle="Sollicitudin eros nulla mus donec quisque convallis integer condimentum volutpat."
+        subtitle={TEXT_SHORT}
         image={headerServices}
       />
 
@@ -24,10 +26,10 @@ export default function ServicePage({ heroTitle, sectionLabel = 'Serviços' }) {
           <h2>Nulla mus donec a quisque convallis integer</h2>
           <div className="service-desc-grid">
             <p>
-              Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing. Consequat enim mollis mauris vulputate phasellus neque, eros turpis et eu adipiscing id tempor.
+              {TEXT_LONG}
             </p>
             <p>
-              Eros turpis et eu adipiscing id tempor. Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing. Consequat enim mollis mauris vulputate phasellus neque.
+              {TEXT_LONG}
             </p>
           </div>
           <Link to="/contato" className="service-desc-link">Vamos trabalhar juntos →</Link>
@@ -42,14 +44,22 @@ export default function ServicePage({ heroTitle, sectionLabel = 'Serviços' }) {
         <TestimonialBlock />
       </section>
 
-      <section className="service-portfolio">
+      <section
+        className="service-portfolio"
+        style={{
+          backgroundImage: `url(${lineBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
         <div className="container">
           <div className="service-portfolio-grid">
             <div className="service-portfolio-content">
               <SectionLabel>Portfólio</SectionLabel>
               <h2>Nulla mus donec a quisque convallis</h2>
               <p>
-                Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing. Consequat enim mollis mauris vulputate phasellus neque.
+                {TEXT_LONG}
               </p>
               <Link to="/contato" className="btn-primary">Btn de Download</Link>
             </div>

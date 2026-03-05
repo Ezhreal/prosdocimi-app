@@ -1,8 +1,9 @@
 import { Star } from 'lucide-react';
+import { TEXT_LONG } from '../constants/texts';
 import './TestimonialBlock.css';
 
 export default function TestimonialBlock({
-  quote = 'Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing',
+  quote = TEXT_LONG,
   author = 'MATTHEW JOHNSON',
   company = 'Dynamic Company',
 }) {

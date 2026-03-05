@@ -1,5 +1,5 @@
 .home-hero {
-  background: var(--white);
+  background-color: var(--white);
   padding: var(--section-py) 0;
   text-align: center;
 }
@@ -21,7 +21,7 @@
   font-size: 16px;
   color: var(--gray-text);
   line-height: 1.75;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .home-hero-btns {
@@ -44,23 +44,24 @@
 
 .home-services-grid {
   display: grid;
-  grid-template-columns: 40% 1fr;
+  grid-template-columns: 25% 1fr;
   gap: 48px;
   align-items: start;
 }
 
-.home-services-left .section-label {
-  margin-bottom: 8px;
+.home-services-label {
+  padding-top: 0.25em;
 }
 
-.home-services-left h2 {
+.home-services-content h2 {
   margin-bottom: 16px;
 }
 
-.home-services-left p {
+.home-services-content > p {
   font-size: 16px;
   color: var(--gray-text);
   line-height: 1.75;
+  margin-bottom: 24px;
 }
 
 .home-services-cards {
@@ -100,28 +101,24 @@
 
 .home-grupo-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 25% 1fr;
   gap: 48px;
-  align-items: center;
+  align-items: start;
 }
 
-.home-grupo-left .section-label {
-  margin-bottom: 8px;
+.home-grupo-label {
+  padding-top: 0.25em;
 }
 
-.home-grupo-left h2 {
+.home-grupo-content h2 {
   margin-bottom: 16px;
 }
 
-.home-grupo-left p {
+.home-grupo-content p {
   margin-bottom: 24px;
   font-size: 16px;
   color: var(--gray-text);
   line-height: 1.75;
-}
-
-.home-grupo-right {
-  min-height: 200px;
 }
 
 .home-sobre {

@@ -42,6 +42,7 @@
 }
 
 .service-portfolio {
+  background-color: var(--white);
   padding: var(--section-py) 0;
 }
 

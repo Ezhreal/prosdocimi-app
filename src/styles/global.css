@@ -10,7 +10,7 @@
   --white:      #FFFFFF;
   --gradient:   linear-gradient(135deg, #054768 0%, #022436 100%);
   --font:       'Ubuntu', sans-serif;
-  --container:  1200px;
+  --container:  1330px;
   --section-py: 80px;
 }
 
@@ -90,23 +90,20 @@ body {
   border-color: white;
 }
 
-/* Section label */
-.section-label {
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--teal);
-}
-
+/* Section label — sempre verde (teal) em todo o site */
+.section-label,
 .section-label--light {
-  color: var(--teal);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal) !important;
 }
 
 h1, h2 {
   font-size: 48px;
-  font-weight: 700;
-  color: var(--navy);
+  font-weight: 400;
+  color: var(--gray-text);
   line-height: 1.2;
 }
 
