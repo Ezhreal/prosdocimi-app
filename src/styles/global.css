@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root {
+  --teal:       #3AA6A7;
+  --navy:       #054768;
+  --dark-navy:  #022436;
+  --gray-text:  #505D68;
+  --gray-light: #A1AEB7;
+  --gray-pale:  #C2D1D9;
+  --white:      #FFFFFF;
+  --gradient:   linear-gradient(135deg, #054768 0%, #022436 100%);
+  --font:       'Ubuntu', sans-serif;
+  --container:  1200px;
+  --section-py: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--gray-text);
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Botões */
+.btn-primary,
+.btn-outline,
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 11px 28px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: white;
+  border-color: var(--teal);
+}
+.btn-primary:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: white;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--teal);
+  border-color: var(--teal);
+}
+.btn-outline:hover {
+  background: var(--teal);
+  color: white;
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+.btn-outline-white:hover {
+  background: white;
+  color: var(--navy);
+  border-color: white;
+}
+
+/* Section label */
+.section-label {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.section-label--light {
+  color: var(--teal);
+}
+
+h1, h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  h1, h2 {
+    font-size: 32px;
+  }
+}

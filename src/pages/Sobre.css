@@ -1,0 +1,302 @@
+.sobre-apresentacao {
+  padding: var(--section-py) 0;
+}
+
+.sobre-apresentacao-grid {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 48px;
+  align-items: start;
+}
+
+.sobre-apresentacao-left h2 {
+  margin-bottom: 0;
+}
+
+.sobre-apresentacao-right p {
+  font-size: 16px;
+  color: var(--gray-text);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.sobre-apresentacao-right hr {
+  border: none;
+  border-top: 1px solid var(--gray-pale);
+  margin: 24px 0 16px;
+}
+
+.sobre-link {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--teal);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.sobre-link:hover {
+  opacity: 0.85;
+}
+
+.sobre-mvv {
+  padding: var(--section-py) 0;
+  border-top: 1px solid var(--gray-pale);
+}
+
+.sobre-mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.sobre-mvv-item {
+  padding: 32px 24px;
+  border-right: 1px solid var(--gray-pale);
+  text-align: center;
+}
+
+.sobre-mvv-item:last-child {
+  border-right: none;
+}
+
+.sobre-mvv-item img {
+  margin-bottom: 16px;
+}
+
+.sobre-mvv-item h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.sobre-mvv-item p {
+  font-size: 14px;
+  color: var(--gray-text);
+  line-height: 1.6;
+}
+
+.sobre-parallax {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.sobre-o-que-fazemos {
+  padding: var(--section-py) 0;
+}
+
+.sobre-o-que-fazemos .section-label {
+  margin-bottom: 24px;
+}
+
+.sobre-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-bottom: 24px;
+}
+
+.sobre-card {
+  padding: 32px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sobre-card img {
+  margin-bottom: 16px;
+}
+
+.sobre-card-teal img,
+.sobre-card-navy img {
+  filter: brightness(0) invert(1);
+}
+
+.sobre-card-white img {
+  filter: none;
+}
+
+.sobre-card-teal {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.sobre-card-teal h3,
+.sobre-card-teal p {
+  color: var(--white);
+}
+
+.sobre-card-white {
+  background: var(--white);
+  border: 1px solid var(--gray-pale);
+}
+
+.sobre-card-white h3 {
+  color: var(--navy);
+}
+
+.sobre-card-white p {
+  color: var(--gray-text);
+}
+
+.sobre-card-navy {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.sobre-card-navy h3,
+.sobre-card-navy p {
+  color: var(--white);
+}
+
+.sobre-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.sobre-card p {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.sobre-cards-extra {
+  font-size: 14px;
+  color: var(--gray-text);
+  line-height: 1.6;
+}
+
+.sobre-citacao-img {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.sobre-citacao-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 71, 104, 0.5);
+}
+
+.sobre-citacao-text {
+  padding: 60px 0;
+  background: var(--white);
+  text-align: center;
+}
+
+.sobre-citacao-quote {
+  font-size: 80px;
+  color: var(--gray-pale);
+  line-height: 1;
+  display: block;
+  margin-bottom: -20px;
+}
+
+.sobre-citacao-p {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.sobre-alexandre {
+  padding: var(--section-py) 0;
+  background: var(--navy);
+}
+
+.sobre-alexandre-grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 0;
+  align-items: center;
+  min-height: 400px;
+}
+
+.sobre-alexandre-img-wrap {
+  position: relative;
+  z-index: 2;
+  margin-right: -60px;
+}
+
+.sobre-alexandre-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.sobre-alexandre-content {
+  background: var(--navy);
+  padding: 48px 48px 48px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.sobre-alexandre-label {
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+
+.sobre-alexandre-content h2 {
+  color: var(--white) !important;
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+
+.sobre-alexandre-content p {
+  font-size: 14px;
+  color: var(--white);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .sobre-apresentacao-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-mvv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-mvv-item {
+    border-right: none;
+    border-bottom: 1px solid var(--gray-pale);
+  }
+
+  .sobre-mvv-item:last-child {
+    border-bottom: none;
+  }
+
+  .sobre-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-alexandre-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sobre-alexandre-img-wrap {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .sobre-alexandre-content {
+    padding: 32px 24px;
+  }
+
+  .sobre-parallax {
+    background-attachment: scroll;
+  }
+}

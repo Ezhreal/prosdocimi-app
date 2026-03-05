@@ -1,0 +1,64 @@
+import { Link } from 'react-router-dom';
+import HeroBanner from '../components/HeroBanner';
+import SectionLabel from '../components/SectionLabel';
+import ComoFazemos from '../components/ComoFazemos';
+import CaseSection from '../components/CaseSection';
+import TestimonialBlock from '../components/TestimonialBlock';
+import headerServices from '../assets/images/header-services.jpg';
+import casesPortfolio from '../assets/images/cases-portfolio.png';
+import './ServicePage.css';
+
+export default function ServicePage({ heroTitle, sectionLabel = 'Serviços' }) {
+  return (
+    <>
+      <HeroBanner
+        sectionLabel={sectionLabel}
+        title={heroTitle}
+        subtitle="Sollicitudin eros nulla mus donec quisque convallis integer condimentum volutpat."
+        image={headerServices}
+      />
+
+      <section className="service-desc">
+        <div className="container">
+          <div className="service-desc-line" />
+          <h2>Nulla mus donec a quisque convallis integer</h2>
+          <div className="service-desc-grid">
+            <p>
+              Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing. Consequat enim mollis mauris vulputate phasellus neque, eros turpis et eu adipiscing id tempor.
+            </p>
+            <p>
+              Eros turpis et eu adipiscing id tempor. Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing. Consequat enim mollis mauris vulputate phasellus neque.
+            </p>
+          </div>
+          <Link to="/contato" className="service-desc-link">Vamos trabalhar juntos →</Link>
+        </div>
+      </section>
+
+      <ComoFazemos />
+
+      <CaseSection />
+
+      <section className="service-testimonial">
+        <TestimonialBlock />
+      </section>
+
+      <section className="service-portfolio">
+        <div className="container">
+          <div className="service-portfolio-grid">
+            <div className="service-portfolio-content">
+              <SectionLabel>Portfólio</SectionLabel>
+              <h2>Nulla mus donec a quisque convallis</h2>
+              <p>
+                Volutpat commodo at dictum amet tincidunt facilisis id lorem eu vitae cursus auctor laoreet fermentum adipiscing. Consequat enim mollis mauris vulputate phasellus neque.
+              </p>
+              <Link to="/contato" className="btn-primary">Btn de Download</Link>
+            </div>
+            <div className="service-portfolio-img">
+              <img src={casesPortfolio} alt="Portfólio" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
