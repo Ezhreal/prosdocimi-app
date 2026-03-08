@@ -17,7 +17,7 @@
   font-size: 16px;
   color: var(--gray-text);
   line-height: 1.75;
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .sobre-apresentacao-right hr {
@@ -32,6 +32,7 @@
   color: var(--teal);
   text-decoration: none;
   transition: opacity 0.2s ease;
+  margin-top: 40px;
 }
 
 .sobre-link:hover {
@@ -40,7 +41,6 @@
 
 .sobre-mvv {
   padding: var(--section-py) 0;
-  border-top: 1px solid var(--gray-pale);
 }
 
 .sobre-mvv-grid {
@@ -51,8 +51,7 @@
 
 .sobre-mvv-item {
   padding: 32px 24px;
-  border-right: 1px solid var(--gray-pale);
-  text-align: center;
+  text-align: left;
 }
 
 .sobre-mvv-item:last-child {
@@ -60,7 +59,7 @@
 }
 
 .sobre-mvv-item img {
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .sobre-mvv-item h3 {
@@ -87,14 +86,22 @@
   padding: var(--section-py) 0;
 }
 
-.sobre-o-que-fazemos .section-label {
-  margin-bottom: 24px;
+.sobre-o-que-fazemos-grid {
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.sobre-o-que-fazemos-label {
+  padding-top: 0.25em;
 }
 
 .sobre-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: 12px;
+  min-height: 400px;
   margin-bottom: 24px;
 }
 
@@ -103,10 +110,11 @@
   min-height: 220px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .sobre-card img {
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .sobre-card-teal img,
@@ -152,8 +160,10 @@
 }
 
 .sobre-card h3 {
-  font-size: 18px;
+  font-size: 36px;
   font-weight: 700;
+  line-height: 1.2;
+  font-family:var(--font);
   margin-bottom: 8px;
 }
 
@@ -161,7 +171,6 @@
   font-size: 14px;
   opacity: 0.9;
   line-height: 1.6;
-  flex: 1;
 }
 
 .sobre-cards-extra {
@@ -186,57 +195,53 @@
 .sobre-citacao-text {
   padding: 60px 0;
   background: var(--white);
-  text-align: center;
+  text-align: left;
+  background: no-repeat top;
+  padding-top: 450px;
 }
 
 .sobre-citacao-quote {
-  font-size: 80px;
-  color: var(--gray-pale);
+  font-size: 120px;
   line-height: 1;
   display: block;
   margin-bottom: -20px;
 }
 
 .sobre-citacao-p {
-  font-size: 28px;
+  font-size: 48px;
   font-weight: 700;
-  color: var(--navy);
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0;
   line-height: 1.4;
 }
 
 .sobre-alexandre {
   padding: var(--section-py) 0;
-  background: var(--navy);
 }
 
 .sobre-alexandre-grid {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 30% 70%;
   gap: 0;
-  align-items: center;
-  min-height: 400px;
+  align-items: flex-end;
+  /* min-height: 400px; */
 }
 
 .sobre-alexandre-img-wrap {
   position: relative;
   z-index: 2;
-  margin-right: -60px;
 }
 
 .sobre-alexandre-img {
   width: 100%;
-  max-width: 400px;
   height: auto;
   display: block;
   border-radius: 4px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .sobre-alexandre-content {
   background: var(--navy);
-  padding: 48px 48px 48px 80px;
+  padding: 59px 80px;
   position: relative;
   z-index: 1;
 }
@@ -249,7 +254,7 @@
 .sobre-alexandre-content h2 {
   color: var(--white) !important;
   font-size: 38px;
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .sobre-alexandre-content p {
@@ -262,6 +267,10 @@
 
 @media (max-width: 768px) {
   .sobre-apresentacao-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-o-que-fazemos-grid {
     grid-template-columns: 1fr;
   }
 

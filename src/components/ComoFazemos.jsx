@@ -22,7 +22,7 @@ export default function ComoFazemos({ subtitle }) {
         <div className="como-fazemos-grid">
           {steps.map((step, i) => (
             <div key={i} className="como-fazemos-item">
-              <img src={iconHow} alt="" width={32} height={32} />
+              <img src={iconHow} alt=""  />
               <h3>{step.title}</h3>
               <p>{step.text}</p>
             </div>

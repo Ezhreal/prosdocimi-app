@@ -18,21 +18,28 @@ export default function ServicePage({ heroTitle, sectionLabel = 'Serviços' }) {
         title={heroTitle}
         subtitle={TEXT_SHORT}
         image={headerServices}
+        fullWidth
       />
 
       <section className="service-desc">
         <div className="container">
-          <div className="service-desc-line" />
-          <h2>Nulla mus donec a quisque convallis integer</h2>
-          <div className="service-desc-grid">
-            <p>
-              {TEXT_LONG}
-            </p>
-            <p>
-              {TEXT_LONG}
-            </p>
+          <div className="service-desc-grid-wrap">
+            <div className="service-desc-line-col">
+              <div className="service-desc-line" />
+            </div>
+            <div className="service-desc-content">
+              <h2>Nulla mus donec a quisque convallis integer</h2>
+              <div className="service-desc-grid">
+                <p>
+                  {TEXT_LONG}
+                </p>
+                <p>
+                  {TEXT_LONG}
+                </p>
+              </div>
+              <Link to="/contato" className="service-desc-link">Vamos trabalhar juntos →</Link>
+            </div>
           </div>
-          <Link to="/contato" className="service-desc-link">Vamos trabalhar juntos →</Link>
         </div>
       </section>
 

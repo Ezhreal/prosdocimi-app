@@ -10,6 +10,13 @@
   overflow: hidden;
 }
 
+/* Páginas internas (Sobre, Consultoria, Auditoria, Treinamentos): 100% container, texto à esquerda, sem flex center */
+.hero-banner--full {
+  display: block;
+  padding: 80px 0;
+}
+
+
 .hero-banner-line {
   position: absolute;
   right: 0;
@@ -22,7 +29,7 @@
 }
 
 .hero-banner-inner {
-  text-align: center;
+  text-align: left;
   position: relative;
   z-index: 1;
 }
@@ -34,7 +41,7 @@
 
 .hero-banner-title {
   color: var(--white) !important;
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .hero-banner-subtitle {
@@ -45,6 +52,16 @@
   max-width: 640px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.hero-banner--full .hero-banner-inner {
+  width: 100%;
+  text-align: left;
+}
+
+.hero-banner--full .hero-banner-subtitle {
+  max-width: 100%;
+  margin: 0;
 }
 
 @media (max-width: 768px) {

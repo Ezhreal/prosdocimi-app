@@ -48,7 +48,7 @@ export default function Contato() {
       <section className="contato-header" style={{ backgroundImage: `url(${abstractBg})` }}>
         <div className="container">
           <SectionLabel>Contato</SectionLabel>
-          <h1>Contato</h1>
+          <h1>Nulla mus donec a quisque convallis integer</h1>
         </div>
       </section>
 

@@ -43,18 +43,19 @@ export default function Treinamentos() {
         title="Treinamentos"
         subtitle={TEXT_SHORT}
         image={headerTraining}
+        fullWidth
       />
 
       <section className="treinamentos-assuntos">
         <div className="container">
           <SectionLabel>Assuntos do Treinamento</SectionLabel>
-          <h2>Assuntos do Treinamento</h2>
+          <h2>Nulla mus donec a quisque </h2>
           <div className="treinamentos-grid-wrapper">
             <div className="treinamentos-grid-cross" />
             <div className="treinamentos-grid">
               {courseTopics.map((item, i) => (
                 <div key={i} className="treinamentos-grid-item">
-                  <img src={item.icon} alt="" width={32} height={32} />
+                  <img src={item.icon} alt=""  />
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </div>
@@ -72,7 +73,7 @@ export default function Treinamentos() {
           <div className="treinamentos-demand-grid">
             {demandSteps.map((step, i) => (
               <div key={i} className="treinamentos-demand-item">
-                <img src={iconHow} alt="" width={32} height={32} />
+                <img src={iconHow} alt=""  />
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
               </div>

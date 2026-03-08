@@ -4,6 +4,7 @@
 
 .treinamentos-assuntos .section-label {
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .treinamentos-assuntos h2 {
@@ -88,7 +89,7 @@
 
 .treinamentos-demand h2 {
   color: var(--white) !important;
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .treinamentos-demand-sub {
@@ -110,7 +111,7 @@
 }
 
 .treinamentos-demand-item img {
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
   filter: brightness(0) invert(1);
 }
 
@@ -136,11 +137,11 @@
 .treinamentos-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 500px;
+  min-height: 700px;
 }
 
 .treinamentos-split-img {
-  height: 500px;
+  height: 700px;
   overflow: hidden;
 }
 
@@ -162,14 +163,14 @@
 }
 
 .treinamentos-split-content h2 {
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .treinamentos-split-content p {
   font-size: 16px;
   color: var(--gray-text);
   line-height: 1.75;
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .treinamentos-split-content .btn-primary {

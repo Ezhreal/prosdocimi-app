@@ -20,6 +20,7 @@ export default function Sobre() {
         title="A Prosdocimi"
         subtitle={TEXT_SHORT}
         showLine
+        fullWidth
       />
 
       <section className="sobre-apresentacao">
@@ -35,7 +36,7 @@ export default function Sobre() {
               <p>
                 {TEXT_LONG}
               </p>
-              <hr />
+        
               <Link to="/contato" className="sobre-link">Vamos trabalhar juntos →</Link>
             </div>
           </div>
@@ -46,17 +47,17 @@ export default function Sobre() {
         <div className="container">
           <div className="sobre-mvv-grid">
             <div className="sobre-mvv-item">
-              <img src={iconMission} alt="" width={32} height={32} />
+              <img src={iconMission} alt=""  />
               <h3>Missão</h3>
               <p>{TEXT_SHORT}</p>
             </div>
             <div className="sobre-mvv-item">
-              <img src={iconVision} alt="" width={32} height={32} />
+              <img src={iconVision} alt=""  />
               <h3>Visão</h3>
               <p>{TEXT_SHORT}</p>
             </div>
             <div className="sobre-mvv-item">
-              <img src={iconValues} alt="" width={32} height={32} />
+              <img src={iconValues} alt=""  />
               <h3>Valores</h3>
               <p>{TEXT_SHORT}</p>
             </div>
@@ -68,32 +69,34 @@ export default function Sobre() {
 
       <section className="sobre-o-que-fazemos">
         <div className="container">
-          <SectionLabel>O que fazemos</SectionLabel>
-          <div className="sobre-cards">
-            <div className="sobre-card sobre-card-teal">
-              <img src={iconHow} alt="" width={32} height={32} />
-              <h3>Consultoria estratégica</h3>
-              <p>{TEXT_SHORT}</p>
+          <div className="sobre-o-que-fazemos-grid">
+            <div className="sobre-o-que-fazemos-label">
+              <SectionLabel>O que fazemos</SectionLabel>
             </div>
-            <div className="sobre-card sobre-card-white">
-              <img src={iconHow} alt="" width={32} height={32} />
-              <h3>Auditoria responsável</h3>
-              <p>{TEXT_SHORT}</p>
-            </div>
-            <div className="sobre-card sobre-card-navy">
-              <img src={iconHow} alt="" width={32} height={32} />
-              <h3>Treinamento e Palestras</h3>
-              <p>{TEXT_SHORT}</p>
+            <div className="sobre-o-que-fazemos-content">
+              <div className="sobre-cards">
+                <div className="sobre-card sobre-card-teal">
+                  <h3>Consultoria estratégica</h3>
+                  <p>{TEXT_SHORT}</p>
+                </div>
+                <div className="sobre-card sobre-card-white">
+
+                  <h3>Auditoria responsável</h3>
+                  <p>{TEXT_SHORT}</p>
+                </div>
+                <div className="sobre-card sobre-card-teal">
+
+                  <h3>Treinamento e Palestras</h3>
+                  <p>{TEXT_SHORT}</p>
+                </div>
+              </div>
+              <p className="sobre-cards-extra">{TEXT_LONG}</p>
             </div>
           </div>
-          <p className="sobre-cards-extra">{TEXT_SHORT}</p>
         </div>
       </section>
 
-      <section className="sobre-citacao-img" style={{ backgroundImage: `url(${citacaoBg})` }}>
-        <div className="sobre-citacao-overlay" />
-      </section>
-      <section className="sobre-citacao-text">
+      <section className="sobre-citacao-text"  style={{ backgroundImage: `url(${citacaoBg})` }}>
         <div className="container">
           <span className="sobre-citacao-quote">"</span>
           <p className="sobre-citacao-p">

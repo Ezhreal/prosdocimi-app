@@ -29,7 +29,7 @@
 
 .como-fazemos-title {
   color: var(--white) !important;
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .como-fazemos-subtitle {
@@ -50,7 +50,7 @@
 }
 
 .como-fazemos-item img {
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
   filter: brightness(0) invert(1);
 }
 

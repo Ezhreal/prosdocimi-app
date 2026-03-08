@@ -9,13 +9,14 @@ export default function HeroBanner({
   image,
   dark = true,
   showLine = false,
+  fullWidth = false,
 }) {
   const style = image
     ? { backgroundImage: `linear-gradient(rgba(2, 36, 54, 0.7), rgba(2, 36, 54, 0.7)), url(${image})` }
     : { background: 'var(--gradient)' };
 
   return (
-    <section className="hero-banner" style={style}>
+    <section className={`hero-banner ${fullWidth ? 'hero-banner--full' : ''}`} style={style}>
       {showLine && (
         <img
           src={lineBg}

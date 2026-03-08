@@ -4,6 +4,8 @@
   background-size: cover;
   background-position: center;
   opacity: 0.95;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .contato-header .section-label {

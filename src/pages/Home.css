@@ -14,7 +14,7 @@
 }
 
 .home-hero h1 {
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .home-hero-p {
@@ -54,7 +54,7 @@
 }
 
 .home-services-content h2 {
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .home-services-content > p {
@@ -91,7 +91,7 @@
   font-size: 14px;
   color: var(--gray-text);
   line-height: 1.6;
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .home-grupo {
@@ -111,7 +111,7 @@
 }
 
 .home-grupo-content h2 {
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .home-grupo-content p {
@@ -151,20 +151,22 @@
 
 .home-sobre-content h2 {
   color: var(--white) !important;
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .home-sobre-content p {
   color: var(--white);
+  max-width: 80%;
   opacity: 0.85;
   font-size: 16px;
   line-height: 1.75;
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .home-sobre-mvv p {
-  margin-bottom: 12px;
+  margin-bottom: 2.5rem;
   font-size: 16px;
+  max-width: 80%;
   opacity: 0.8;
 }
 
@@ -179,7 +181,7 @@
 .home-sobre-img {
   border-radius: 4px;
   overflow: hidden;
-  height: 380px;
+  margin-bottom: -120px;
 }
 
 .home-sobre-img img {
@@ -198,7 +200,7 @@
 }
 
 .home-clientes h2 {
-  margin-bottom: 16px;
+  margin-bottom: 2.5rem;
 }
 
 .home-clientes-desc {
@@ -240,7 +242,4 @@
     height: 280px;
   }
 
-  .home-sobre-img {
-    height: 280px;
-  }
 }
