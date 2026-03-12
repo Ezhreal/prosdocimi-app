@@ -2,14 +2,21 @@
   padding: var(--section-py) 0;
   text-align: center;
   background-size: cover;
-  background-position: center;
-  opacity: 0.95;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.contato-header-inner {
+  max-width: 640px;
   margin: 0 auto;
-  max-width: 600px;
 }
 
 .contato-header .section-label {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.contato-header h1 {
+  margin-bottom: 0;
 }
 
 .contato-form-section {
@@ -17,10 +24,9 @@
 }
 
 .contato-form-card {
-  max-width: 740px;
+  width: 100%;
   margin: 0 auto 40px;
-  background: var(--white);
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+  background: #F4F8FB;
   border-radius: 8px;
   padding: 48px;
 }
@@ -35,7 +41,7 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--gray-text);
   margin-bottom: 6px;
 }
 
@@ -105,7 +111,7 @@
 .contato-info-item a {
   font-size: 16px;
   font-weight: 600;
-  color: var(--teal);
+  color: var(--gray-text);
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
@@ -162,7 +168,7 @@
   align-items: center;
   font-size: 15px;
   font-weight: 500;
-  color: var(--navy);
+  color: var(--gray-text);
   gap: 12px;
 }
 

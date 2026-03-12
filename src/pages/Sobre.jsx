@@ -21,6 +21,7 @@ export default function Sobre() {
         subtitle={TEXT_SHORT}
         showLine
         fullWidth
+        className="header-about-line"
       />
 
       <section className="sobre-apresentacao">
@@ -113,7 +114,7 @@ export default function Sobre() {
             </div>
             <div className="sobre-alexandre-content">
               <SectionLabel className="sobre-alexandre-label">Alexandre Prosdocimi</SectionLabel>
-              <h2>Alexandre Prosdocimi</h2>
+              <h2>Nulla mus donec a quisque convallis integer</h2>
               <p>
                 {TEXT_LONG}
               </p>

@@ -127,16 +127,41 @@ export default function Treinamentos() {
         <div className="container">
           <h2>Workshops, palestras e treinamentos</h2>
           <div className="treinamentos-workshops">
-            <div className="workshop-item workshop-large">
-              <img src={workshops[0]} alt="Workshop 1" />
+            <div className="workshop-col">
+              <div className="workshop-item workshop-main">
+                <img src={workshops[0]} alt="Workshop 1" />
+              </div>
+              <div className='workshop-photo-row'>
+                <div className="workshop-item">
+                  <img src={workshops[1]} alt="Workshop 2" />
+                </div>
+                <div className="workshop-item">
+                  <img src={workshops[2]} alt="Workshop 3" />
+                </div>
+              </div>
+           
+              <div className="workshop-item workshop-single">
+                <img src={workshops[3]} alt="Workshop 4" />
+              </div>
             </div>
-            <div className="workshop-item"><img src={workshops[1]} alt="Workshop 2" /></div>
-            <div className="workshop-item"><img src={workshops[2]} alt="Workshop 3" /></div>
-            <div className="workshop-item"><img src={workshops[3]} alt="Workshop 4" /></div>
-            <div className="workshop-item"><img src={workshops[4]} alt="Workshop 5" /></div>
-            <div className="workshop-item"><img src={workshops[5]} alt="Workshop 6" /></div>
-            <div className="workshop-item"><img src={workshops[6]} alt="Workshop 7" /></div>
-            <div className="workshop-item"><img src={workshops[7]} alt="Workshop 8" /></div>
+
+            <div className="workshop-col workshop-col-reverse">
+              <div className="workshop-item workshop-single">
+                <img src={workshops[4]} alt="Workshop 5" />
+              </div>
+              <div className='workshop-photo-row'>
+                  <div className="workshop-item">
+                    <img src={workshops[5]} alt="Workshop 6" />
+                  </div>
+                  <div className="workshop-item">
+                    <img src={workshops[6]} alt="Workshop 7" />
+                  </div>
+              </div>
+            
+              <div className="workshop-item  workshop-main">
+                <img src={workshops[7]} alt="Workshop 8" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

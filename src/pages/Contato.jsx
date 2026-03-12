@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SectionLabel from '../components/SectionLabel';
 import imgParallax from '../assets/images/img-parallax-background.jpg';
-import abstractBg from '../assets/images/abstract-background-white.png';
+import lineBg from '../assets/images/line-background-blue.png';
 import { MessageCircle, Mail } from 'lucide-react';
 import './Contato.css';
 
@@ -45,8 +45,8 @@ export default function Contato() {
 
   return (
     <>
-      <section className="contato-header" style={{ backgroundImage: `url(${abstractBg})` }}>
-        <div className="container">
+      <section className="contato-header" style={{ backgroundImage: `url(${lineBg})` }}>
+        <div className="container contato-header-inner">
           <SectionLabel>Contato</SectionLabel>
           <h1>Nulla mus donec a quisque convallis integer</h1>
         </div>
@@ -111,15 +111,15 @@ export default function Contato() {
 
           <div className="contato-info">
             <div className="contato-info-item">
-              <MessageCircle size={20} color="var(--teal)" />
+              <MessageCircle size={20} color="var(--gray-text)" />
               <a href="https://wa.me/5531999520720" target="_blank" rel="noreferrer">
-                +55 31 9 99952-0720
+                Entre em contato
               </a>
             </div>
             <div className="contato-info-item">
-              <Mail size={20} color="var(--teal)" />
+              <Mail size={20} color="var(--gray-text)" />
               <a href="mailto:consultoria@prosdocimiconsultoria.com.br">
-                consultoria@prosdocimiconsultoria.com.br
+                Envie um email
               </a>
             </div>
           </div>

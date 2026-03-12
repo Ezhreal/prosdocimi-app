@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import RouteEffects from './components/RouteEffects';
 import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import Consultoria from './pages/Consultoria';
@@ -12,6 +13,7 @@ import Contato from './pages/Contato';
 export default function App() {
   return (
     <BrowserRouter>
+      <RouteEffects />
       <Navbar />
       <main>
         <Routes>

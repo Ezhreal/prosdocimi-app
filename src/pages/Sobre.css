@@ -51,7 +51,7 @@
 
 .sobre-mvv-item {
   padding: 32px 24px;
-  text-align: left;
+  text-align: center;
 }
 
 .sobre-mvv-item:last-child {
@@ -65,7 +65,7 @@
 .sobre-mvv-item h3 {
   font-size: 16px;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--gray-text);
   margin-bottom: 8px;
 }
 
@@ -111,6 +111,37 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre-card-teal::before,
+.sobre-card-white::before {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sobre-card-teal::before {
+  background-image: url('../assets/images/about-line-bg-white.png');
+  top: 0;
+  left: 0;
+}
+
+.sobre-card-white::before {
+  background-image: url('../assets/images/about-line-bg-blue.png');
+  right: 0;
+  bottom: 0;
+}
+
+.sobre-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .sobre-card img {
@@ -137,12 +168,12 @@
 }
 
 .sobre-card-white {
-  background: var(--white);
+  background: #F4F8FB;
   border: 1px solid var(--gray-pale);
 }
 
 .sobre-card-white h3 {
-  color: var(--navy);
+  color: var(--gray-text);
 }
 
 .sobre-card-white p {
@@ -195,7 +226,7 @@
 .sobre-citacao-text {
   padding: 60px 0;
   background: var(--white);
-  text-align: left;
+  text-align: center;
   background: no-repeat top;
   padding-top: 450px;
 }
@@ -211,7 +242,7 @@
   font-size: 48px;
   font-weight: 700;
   max-width: 800px;
-  margin: 0;
+  margin: 0 auto;
   line-height: 1.4;
 }
 

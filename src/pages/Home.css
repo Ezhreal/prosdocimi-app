@@ -82,7 +82,7 @@
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--gray-text);
   letter-spacing: 0.05em;
   margin-bottom: 8px;
 }
@@ -125,6 +125,35 @@
   background: var(--gradient);
   padding: var(--section-py) 0;
   position: relative;
+}
+
+.home-sobre::before,
+.home-sobre::after {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  background-image: url('../assets/images/abstract-background-white.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-sobre::before {
+  left: 0;
+  bottom: -220px;
+}
+
+.home-sobre::after {
+  right: 0;
+  top: -220px;
+  transform: scaleX(-1);
+}
+
+.home-sobre .container {
+  position: relative;
+  z-index: 1;
 }
 
 .home-sobre-grid {

@@ -3,7 +3,12 @@
 }
 
 .instagram-title {
+  text-align: center;
   margin-bottom: 32px;
+}
+
+.instagram-section .section-label {
+  text-align: center;
 }
 
 .instagram-grid {

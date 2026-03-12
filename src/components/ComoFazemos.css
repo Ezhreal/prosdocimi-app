@@ -5,6 +5,30 @@
   overflow: hidden;
 }
 
+.como-fazemos::before,
+.como-fazemos::after {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  background-image: url('../assets/images/abstract-background-white.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.como-fazemos::before {
+  left: 0;
+  bottom: -220px;
+}
+
+.como-fazemos::after {
+  right: 0;
+  top: -220px;
+  transform: scaleX(-1);
+}
+
 .como-fazemos-line {
   position: absolute;
   right: 0;

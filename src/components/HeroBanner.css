@@ -64,6 +64,21 @@
   margin: 0;
 }
 
+.header-about-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 530px;
+  height: 420px;
+  background-image: url('../assets/images/header-about-line.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
 @media (max-width: 768px) {
   .hero-banner {
     min-height: 320px;

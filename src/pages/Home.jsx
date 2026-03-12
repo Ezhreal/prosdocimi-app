@@ -56,19 +56,19 @@ export default function Home() {
                   <img src={iconConsulting} alt=""  />
                   <h3>Consultoria</h3>
                   <p>{TEXT_SHORT}</p>
-                  <Link to="/consultoria" className="btn-outline">Saber mais</Link>
+                  <Link to="/consultoria" className="btn-primary">Saber mais</Link>
                 </div>
                 <div className="home-service-card">
                   <img src={iconAudit} alt=""  />
                   <h3>Auditorias</h3>
                   <p>{TEXT_SHORT}</p>
-                  <Link to="/auditoria" className="btn-outline">Saber mais</Link>
+                  <Link to="/auditoria" className="btn-primary">Saber mais</Link>
                 </div>
                 <div className="home-service-card">
                   <img src={iconTraining} alt=""  />
                   <h3>Treinamentos</h3>
                   <p>{TEXT_SHORT}</p>
-                  <Link to="/treinamentos" className="btn-outline">Saber mais</Link>
+                  <Link to="/treinamentos" className="btn-primary">Saber mais</Link>
                 </div>
               </div>
             </div>

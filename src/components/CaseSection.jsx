@@ -26,8 +26,8 @@ export default function CaseSection() {
             <div className="case-insights">
               {insights.map((item, i) => (
                 <div key={i} className="case-insight">
-                  <span className="case-insight-quote">"</span>
-                  <div>
+                  <span className="case-insight-number">{String(i + 1).padStart(2, '0')}</span>
+                  <div className="case-insight-body">
                     <p className="case-insight-title">{item.title}</p>
                     <p className="case-insight-text">{item.text}</p>
                   </div>
@@ -41,10 +41,11 @@ export default function CaseSection() {
             </div>
             <div className="case-photo-row">
               <img src={imgCase02} alt="Case 2" />
-              <img src={imgCase04} alt="Case 4" />
+              <img src={imgCase03} alt="Case 3" />
+              
             </div>
             <div className="case-photo-single">
-              <img src={imgCase03} alt="Case 3" />
+            <img src={imgCase04} alt="Case 4" />
             </div>
           </div>
         </div>

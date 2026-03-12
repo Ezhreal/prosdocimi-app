@@ -27,7 +27,7 @@
 .testimonial-text {
   font-size: 20px;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--gray-text);
   line-height: 1.5;
   margin-bottom: 12px;
 }
