@@ -21,16 +21,15 @@ import { TEXT_LONG, TEXT_SHORT } from '../constants/texts';
 import './Treinamentos.css';
 
 const courseTopics = [
-  { icon: icon01, title: 'Insights Concepts', text: TEXT_SHORT },
-  { icon: icon02, title: 'Insights Concepts', text: TEXT_SHORT },
-  { icon: icon03, title: 'Insights Concepts', text: TEXT_SHORT },
-  { icon: icon04, title: 'Insights Concepts', text: TEXT_SHORT },
+  { icon: icon01, title: 'Norma de Desempenho - NBR 15575', text: "Prepare sua construtora para atender as exigências da norma de desempenho habitacional com segurança e eficiência." },
+  { icon: icon02, title: 'Compliance e Antissuborno', text: "Entenda as exigências da ISO 37001 e ISO 37301 e fortaleça os mecanismos de integridade, transparência e governança da sua organização." },
+  { icon: icon03, title: 'Sistemas de Gestão – SiAC/PBQP-H, ISO 9001, ISO 14001 e ISO 45001 e outros', text: "Atualização, implantação e melhoria dos sistemas de gestão, incluindo qualidade, gestão ambiental, saúde e segurança ocupacional, entre outros modelos de gestão" },
+  { icon: icon04, title: 'Formação de Auditores e Coordenadores de Gestão', text: "Capacitação completa para auditores e gestores onde quer que você esteja." },
 ];
 
 const demandSteps = [
-  { title: 'Insights Concepts', text: TEXT_SHORT },
-  { title: 'Insights Concepts', text: TEXT_SHORT },
-  { title: 'Insights Concepts', text: TEXT_SHORT },
+  { title: 'Curso de Interpretação e Implantação do Novo SiAC/PBQP-H 2021 - 16 horas', text: "Venha conhecer as principais mudanças na nova versão do SiAC/PBQP-H. Esta nova versão de 14 de janeiro de 2021 traz importantes novidades no processo de qualificação de laboratórios de controle tecnológico.",button: "Acessar curso", link: "/"},
+  { title: 'Curso de Atualização do SiAC/PBQP-H 2021 - 08 horas', text: "Este curso, gravado de forma simples durante um treinamento ao vivo envolvendo auditores e empresas construtoras, traduz de forma simples, clara e objetiva todas as alterações do SiAC/PBQP-H." , button: "Acessar curso", link: "/"}, ,
 ];
 
 const workshops = [workshop01, workshop02, workshop03, workshop04, workshop05, workshop06, workshop07, workshop08];
@@ -41,7 +40,7 @@ export default function Treinamentos() {
       <HeroBanner
         sectionLabel="Serviços"
         title="Treinamentos"
-        subtitle={TEXT_SHORT}
+        subtitle="Capacitação para resultados excepcionais"
         image={headerTraining}
         fullWidth
       />
@@ -49,7 +48,7 @@ export default function Treinamentos() {
       <section className="treinamentos-assuntos">
         <div className="container">
           <SectionLabel>Assuntos do Treinamento</SectionLabel>
-          <h2>Nulla mus donec a quisque </h2>
+          <h2>NO que você vai aprender</h2>
           <div className="treinamentos-grid-wrapper">
             <div className="treinamentos-grid-cross" />
             <div className="treinamentos-grid">
@@ -68,41 +67,39 @@ export default function Treinamentos() {
       <section className="treinamentos-demand">
         <div className="container">
           <SectionLabel className="treinamentos-demand-label">Cursos on Demand</SectionLabel>
-          <h2>Cursos on Demand</h2>
-          <p className="treinamentos-demand-sub">{TEXT_SHORT}</p>
+          <h2>Aprenda no seu tempo</h2>
+          <p className="treinamentos-demand-sub">Cursos gravados, disponíveis quando e onde você quiser - com a qualidade técnica que a Prosdocimi garante.</p>
           <div className="treinamentos-demand-grid">
             {demandSteps.map((step, i) => (
               <div key={i} className="treinamentos-demand-item">
                 <img src={iconHow} alt=""  />
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
+                <br /><br />
+                <a href={step.link} className="btn-outline-white">{step.button}</a>
               </div>
             ))}
           </div>
-          <div className="treinamentos-demand-cta">
-            <a href="/contato" className="btn-outline-white">CTA Button to Plataforma</a>
-          </div>
+
         </div>
       </section>
 
-      <section className="treinamentos-online">
-        <div className="treinamentos-split">
-          <div className="treinamentos-split-img">
-            <img src={imgCourse01} alt="Cursos Online" />
-          </div>
-          <div className="treinamentos-split-content">
-            <SectionLabel>Treinamentos</SectionLabel>
-            <h2>Cursos Online</h2>
-            <p>
-              {TEXT_LONG}
-            </p>
-            <p>
-              {TEXT_LONG}
-            </p>
-            <Link to="/contato" className="btn-primary">Cta Botton</Link>
-          </div>
-        </div>
-      </section>
+    {/*
+<section className="treinamentos-online">
+  <div className="treinamentos-split">
+    <div className="treinamentos-split-img">
+      <img src={imgCourse01} alt="Cursos Online" />
+    </div>
+    <div className="treinamentos-split-content">
+      <SectionLabel>Treinamentos</SectionLabel>
+      <h2>Cursos Online</h2>
+      <p>{TEXT_LONG}</p>
+      <p>{TEXT_LONG}</p>
+      <Link to="/contato" className="btn-primary">Cta Botton</Link>
+    </div>
+  </div>
+</section>
+*/}
 
       <section className="treinamentos-company">
         <div className="treinamentos-split treinamentos-split-reverse">
@@ -110,12 +107,12 @@ export default function Treinamentos() {
             <SectionLabel>Treinamentos</SectionLabel>
             <h2>in Company</h2>
             <p>
-              {TEXT_LONG}
+            Levamos o treinamento até a sua empresa - presencial ou online - com conteúdo adaptado a realidade do seu time e aos desafios do seu setor.
             </p>
             <p>
-              {TEXT_LONG}
+            Ideal para equipes que precisam de capacitação específica em gestão, auditorias, normas técnicas ou formação de líderes e gestores.
             </p>
-            <Link to="/contato" className="btn-primary">Cta Botton</Link>
+            <Link to="/contato" className="btn-primary">Solicitar proposta</Link>
           </div>
           <div className="treinamentos-split-img">
             <img src={imgCourse02} alt="in Company" />

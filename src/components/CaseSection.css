@@ -9,6 +9,10 @@
   align-items: start;
 }
 
+.case-grid.case-grid--reverse {
+  grid-template-columns: 1.5fr 1fr;
+}
+
 .case-content .section-label {
   margin-bottom: 8px;
 }

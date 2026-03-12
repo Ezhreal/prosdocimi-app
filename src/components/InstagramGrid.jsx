@@ -16,7 +16,7 @@ export default function InstagramGrid() {
           {images.map((src, i) => (
             <a
               key={i}
-              href="https://instagram.com"
+              href="https://www.instagram.com/prosdocimiconsultoria"
               target="_blank"
               rel="noreferrer"
               className="instagram-item"
@@ -27,7 +27,7 @@ export default function InstagramGrid() {
           ))}
         </div>
         <div className="instagram-cta">
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="btn-primary">
+          <a href="https://www.instagram.com/prosdocimiconsultoria" target="_blank" rel="noreferrer" className="btn-primary">
             Instagram
           </a>
         </div>

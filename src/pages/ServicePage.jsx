@@ -10,7 +10,19 @@ import lineBg from '../assets/images/line-background-blue.png';
 import { TEXT_LONG, TEXT_SHORT } from '../constants/texts';
 import './ServicePage.css';
 
-export default function ServicePage({ heroTitle, sectionLabel = 'Serviços' }) {
+export default function ServicePage({ heroTitle, sectionLabel = 'Serviços', caseLayout }) {
+  let cases = caseLayout;
+
+  if (!cases) {
+    if (heroTitle === 'Consultorias') {
+      cases = [false, true, false];
+    } else if (heroTitle === 'Auditorias') {
+      cases = [false, true];
+    } else {
+      cases = [false];
+    }
+  }
+
   return (
     <>
       <HeroBanner
@@ -45,7 +57,9 @@ export default function ServicePage({ heroTitle, sectionLabel = 'Serviços' }) {
 
       <ComoFazemos />
 
-      <CaseSection />
+      {cases.map((reverse, index) => (
+        <CaseSection key={index} reverse={reverse} />
+      ))}
 
       <section className="service-testimonial">
         <TestimonialBlock />

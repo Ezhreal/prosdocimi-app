@@ -12,42 +12,58 @@ const insights = [
   { title: 'Insights Concepts', text: TEXT_SHORT },
 ];
 
-export default function CaseSection() {
+export default function CaseSection({ reverse = false }) {
+  const content = (
+    <div className="case-content">
+      <SectionLabel>Nosso Trabalho</SectionLabel>
+      <h2>Case Nome do Projeto</h2>
+      <p className="case-desc">
+        {TEXT_LONG}
+      </p>
+      <div className="case-insights">
+        {insights.map((item, i) => (
+          <div key={i} className="case-insight">
+            <span className="case-insight-number">{String(i + 1).padStart(2, '0')}</span>
+            <div className="case-insight-body">
+              <p className="case-insight-title">{item.title}</p>
+              <p className="case-insight-text">{item.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  const photos = (
+    <div className="case-photos">
+      <div className="case-photo-main">
+        <img src={imgCase01} alt="Case 1" />
+      </div>
+      <div className="case-photo-row">
+        <img src={imgCase02} alt="Case 2" />
+        <img src={imgCase03} alt="Case 3" />
+      </div>
+      <div className="case-photo-single">
+        <img src={imgCase04} alt="Case 4" />
+      </div>
+    </div>
+  );
+
   return (
     <section className="case-section">
       <div className="container">
-        <div className="case-grid">
-          <div className="case-content">
-            <SectionLabel>Nosso Trabalho</SectionLabel>
-            <h2>Case Nome do Projeto</h2>
-            <p className="case-desc">
-              {TEXT_LONG}
-            </p>
-            <div className="case-insights">
-              {insights.map((item, i) => (
-                <div key={i} className="case-insight">
-                  <span className="case-insight-number">{String(i + 1).padStart(2, '0')}</span>
-                  <div className="case-insight-body">
-                    <p className="case-insight-title">{item.title}</p>
-                    <p className="case-insight-text">{item.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="case-photos">
-            <div className="case-photo-main">
-              <img src={imgCase01} alt="Case 1" />
-            </div>
-            <div className="case-photo-row">
-              <img src={imgCase02} alt="Case 2" />
-              <img src={imgCase03} alt="Case 3" />
-              
-            </div>
-            <div className="case-photo-single">
-            <img src={imgCase04} alt="Case 4" />
-            </div>
-          </div>
+        <div className={`case-grid ${reverse ? 'case-grid--reverse' : ''}`}>
+          {reverse ? (
+            <>
+              {photos}
+              {content}
+            </>
+          ) : (
+            <>
+              {content}
+              {photos}
+            </>
+          )}
         </div>
       </div>
     </section>
