@@ -6,12 +6,30 @@ import { MessageCircle, Mail } from 'lucide-react';
 import './Contato.css';
 
 const FAQ_ITEMS = [
-  { q: 'What services do you offer?', a: 'We offer consulting, auditing, and training services tailored to your organization\'s needs.' },
-  { q: 'How do I schedule a consultation?', a: 'You can reach us through the contact form on this page or by WhatsApp. We typically respond within 24 hours.' },
-  { q: 'What industries do you specialize in?', a: 'We work across various industries including construction, manufacturing, and services.' },
-  { q: 'What is your typical project timeline?', a: 'Project timelines vary based on scope. We provide a detailed timeline during our initial consultation.' },
-  { q: 'Do you provide ongoing support after the project?', a: 'Yes, we offer ongoing support and follow-up to ensure lasting results.' },
-  { q: 'How are your consultants qualified?', a: 'Our consultants hold relevant certifications and have extensive experience in their fields.' },
+  {
+    q: 'Quais serviços a Prosdocimi oferece?',
+    a: 'Oferecemos consultoria, auditoria e treinamentos em sistemas de gestão - como ISO 9001, ISO 14001, ISO 45001, NBR ISO 37001, entre outras. Também auxiliamos empresas de construção no atendimento à NBR 15575 – a norma de desempenho para construções residenciais. Atendemos diversos segmentos como construção civil, transportes, indústria, mineração e prestação de serviços.',
+  },
+  {
+    q: 'Como agendo uma consultoria?',
+    a: 'Entre em contato pelo formulário, e-mail ou WhatsApp. Nossos consultores vão entender suas necessidades e montar uma proposta personalizada.',
+  },
+  {
+    q: 'Em quais segmentos vocês atuam?',
+    a: 'Atuamos com clientes de quaisquer segmentos, principalmente em construção civil, incorporação imobiliária, infraestrutura urbana, transportes, indústria, mineração e prestação de serviços.',
+  },
+  {
+    q: 'Qual é o prazo típico de uma consultoria?',
+    a: 'O prazo varia conforme o escopo e os objetivos de cada cliente. Montamos o plano de acordo com a sua disponibilidade e metas - seja para certificação ou para melhoria de processos.',
+  },
+  {
+    q: 'Vocês oferecem suporte após o projeto?',
+    a: 'Sim. Nossos consultores ficam disponíveis para esclarecimentos e visitas sempre que necessário, mesmo após a conclusão do projeto.',
+  },
+  {
+    q: 'Qual é a qualificação dos consultores?',
+    a: 'Nossa equipe possui profissionais com larga experiência em auditorias, treinamentos e consultorias, com atuação em todo o Brasil e conhecimento técnico nas principais normas nacionais e internacionais de gestão.',
+  },
 ];
 
 export default function Contato() {
@@ -47,8 +65,8 @@ export default function Contato() {
     <>
       <section className="contato-header" style={{ backgroundImage: `url(${lineBg})` }}>
         <div className="container contato-header-inner">
-          <SectionLabel>Contato</SectionLabel>
-          <h1>Nulla mus donec a quisque convallis integer</h1>
+          <SectionLabel>CONTATO</SectionLabel>
+          <h1>Vamos conversar?</h1>
         </div>
       </section>
 
@@ -104,22 +122,23 @@ export default function Contato() {
                 {errors.mensagem && <span className="contato-error">{errors.mensagem}</span>}
               </div>
               <button type="button" className="btn-primary contato-submit" onClick={handleSubmit}>
-                Send Message
+                Enviar mensagem
               </button>
             </div>
           </div>
 
           <div className="contato-info">
+            <h3 className="contato-info-title">Informações de Contato</h3>
             <div className="contato-info-item">
               <MessageCircle size={20} color="var(--gray-text)" />
               <a href="https://wa.me/5531999520720" target="_blank" rel="noreferrer">
-                Entre em contato
+                Fale conosco pelo WhatsApp
               </a>
             </div>
             <div className="contato-info-item">
               <Mail size={20} color="var(--gray-text)" />
               <a href="mailto:consultoria@prosdocimiconsultoria.com.br">
-                Envie um email
+                consultoria@prosdocimiconsultoria.com.br
               </a>
             </div>
           </div>
@@ -130,8 +149,10 @@ export default function Contato() {
 
       <section className="contato-faq">
         <div className="container">
-          <h2>Frequently Asked Questions</h2>
-          <p className="contato-faq-sub">Answers to Common Inquiries About Our Services</p>
+          <h2>Perguntas Frequentes</h2>
+          <p className="contato-faq-sub">
+            Respostas para as dúvidas mais comuns sobre nossos serviços
+          </p>
           <div className="contato-faq-grid">
             <div className="contato-faq-column">
               {FAQ_ITEMS.slice(0, 3).map((item, i) => (

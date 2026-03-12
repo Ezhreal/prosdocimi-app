@@ -33,6 +33,10 @@ body {
   color: var(--gray-text);
 }
 
+main {
+  overflow-x: hidden;
+}
+
 .container {
   max-width: var(--container);
   margin: 0 auto;

@@ -6,22 +6,29 @@ import imgCase04 from '../assets/images/img-case04.jpg';
 import { TEXT_LONG, TEXT_SHORT } from '../constants/texts';
 import './CaseSection.css';
 
-const insights = [
+const defaultInsights = [
   { title: 'Insights Concepts', text: TEXT_SHORT },
   { title: 'Insights Concepts', text: TEXT_SHORT },
   { title: 'Insights Concepts', text: TEXT_SHORT },
 ];
 
-export default function CaseSection({ reverse = false }) {
+export default function CaseSection({
+  reverse = false,
+  title,
+  description,
+  bullets,
+}) {
+  const items = bullets && bullets.length ? bullets : defaultInsights;
+
   const content = (
     <div className="case-content">
       <SectionLabel>Nosso Trabalho</SectionLabel>
-      <h2>Case Nome do Projeto</h2>
+      <h2>{title || 'Case Nome do Projeto'}</h2>
       <p className="case-desc">
-        {TEXT_LONG}
+        {description || TEXT_LONG}
       </p>
       <div className="case-insights">
-        {insights.map((item, i) => (
+        {items.map((item, i) => (
           <div key={i} className="case-insight">
             <span className="case-insight-number">{String(i + 1).padStart(2, '0')}</span>
             <div className="case-insight-body">
