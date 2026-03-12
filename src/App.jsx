@@ -12,7 +12,7 @@ import Contato from './pages/Contato';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <RouteEffects />
       <Navbar />
       <main>
