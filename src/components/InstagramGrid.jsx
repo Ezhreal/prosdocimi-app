@@ -1,10 +1,8 @@
 import SectionLabel from './SectionLabel';
-import instagram01 from '../assets/images/instagram01.jpg';
-import instagram02 from '../assets/images/instagram02.jpg';
-import instagram03 from '../assets/images/instagram03.jpg';
 import './InstagramGrid.css';
 
-const images = [instagram01, instagram02, instagram03];
+// Substitua essa URL pela URL de incorporação (iframe) gerada no SnapWidget
+const SNAPWIDGET_SRC = 'https://snapwidget.com/embed/SEU_WIDGET_ID_AQUI';
 
 export default function InstagramGrid() {
   return (
@@ -12,22 +10,25 @@ export default function InstagramGrid() {
       <div className="container">
         <SectionLabel>Social Media</SectionLabel>
         <h2 className="instagram-title">Nos siga no Instagram</h2>
-        <div className="instagram-grid">
-          {images.map((src, i) => (
-            <a
-              key={i}
-              href="https://www.instagram.com/prosdocimiconsultoria"
-              target="_blank"
-              rel="noreferrer"
-              className="instagram-item"
-            >
-              <img src={src} alt={`Instagram ${i + 1}`} />
-              <span className="instagram-overlay" />
-            </a>
-          ))}
+
+        <div className="instagram-widget-wrap">
+          <iframe
+            src={SNAPWIDGET_SRC}
+            title="Feed do Instagram Prosdocimi"
+            className="instagram-widget-iframe"
+            allowTransparency
+            scrolling="no"
+            frameBorder="0"
+          />
         </div>
+
         <div className="instagram-cta">
-          <a href="https://www.instagram.com/prosdocimiconsultoria" target="_blank" rel="noreferrer" className="btn-primary">
+          <a
+            href="https://www.instagram.com/prosdocimiconsultoria"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary"
+          >
             Instagram
           </a>
         </div>

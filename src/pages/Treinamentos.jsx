@@ -28,8 +28,8 @@ const courseTopics = [
 ];
 
 const demandSteps = [
-  { title: 'Curso de Interpretação e Implantação do Novo SiAC/PBQP-H 2021 - 16 horas', text: "Venha conhecer as principais mudanças na nova versão do SiAC/PBQP-H. Esta nova versão de 14 de janeiro de 2021 traz importantes novidades no processo de qualificação de laboratórios de controle tecnológico.",button: "Acessar curso", link: "/"},
-  { title: 'Curso de Atualização do SiAC/PBQP-H 2021 - 08 horas', text: "Este curso, gravado de forma simples durante um treinamento ao vivo envolvendo auditores e empresas construtoras, traduz de forma simples, clara e objetiva todas as alterações do SiAC/PBQP-H." , button: "Acessar curso", link: "/"}, ,
+  { title: 'Curso de Interpretação e Implantação do Novo SiAC/PBQP-H 2021 - 16 horas', text: "Venha conhecer as principais mudanças na nova versão do SiAC/PBQP-H. Esta nova versão de 14 de janeiro de 2021 traz importantes novidades no processo de qualificação de laboratórios de controle tecnológico.",button: "Acessar curso", link: "https://www.sympla.com.br/play/curso-de-interpretacao-e-implantacao-do-novo-siac-pbqp-h-2021-16-horas/1182789"},
+  { title: 'Curso de Atualização do SiAC/PBQP-H 2021 - 08 horas', text: "Este curso, gravado de forma simples durante um treinamento ao vivo envolvendo auditores e empresas construtoras, traduz de forma simples, clara e objetiva todas as alterações do SiAC/PBQP-H." , button: "Acessar curso", link: "https://www.sympla.com.br/play/curso-de-atualizacao-do-siac-pbqp-h-2021-08-horas/1165401"}, ,
 ];
 
 const workshops = [workshop01, workshop02, workshop03, workshop04, workshop05, workshop06, workshop07, workshop08];
@@ -76,7 +76,7 @@ export default function Treinamentos() {
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
                 <br /><br />
-                <a href={step.link} className="btn-outline-white">{step.button}</a>
+                <a href={step.link} target='_blank' className="btn-outline-white">{step.button}</a>
               </div>
             ))}
           </div>

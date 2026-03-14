@@ -28,13 +28,13 @@ export default function Footer() {
             ))}
           </nav>
           <div className="footer-social">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/prosdocimiconsultoria" target="_blank" rel="noreferrer" aria-label="Facebook">
               <Facebook size={18} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/prosdocimiconsultoria" target="_blank" rel="noreferrer" aria-label="Instagram">
               <Instagram size={18} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/prosdocimiconsultoria/?viewAsMember=true" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <Linkedin size={18} />
             </a>
           </div>
