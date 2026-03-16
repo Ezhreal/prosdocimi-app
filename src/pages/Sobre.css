@@ -4,7 +4,7 @@
 
 .sobre-apresentacao-grid {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 35% 1fr;
   gap: 48px;
   align-items: start;
 }

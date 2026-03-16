@@ -31,7 +31,7 @@ export default function Home() {
      
           <div className="home-hero-btns">
             <Link to="/consultoria" className="btn-outline">Conheça nossos serviços</Link>
-            <Link to="/contato" className="btn-primary">Agende uma consultoria</Link>
+            <Link to="/contato" className="btn-primary">Solicite uma proposta</Link>
           </div>
         </div>
       </section>
@@ -89,7 +89,7 @@ export default function Home() {
             <div className="home-grupo-content">
               <h2>Mais de 20 anos construindo qualidade</h2>
               <p>
-              A Prosdocimi atua como uma parceira estratégica para empresas que buscam aprimorar seus processos internos, garantir a conformidade e aumentar a eficiência operacional. Seu principal objetivo é envolvem fornecer inteligência em auditoria e consultoria para impulsionar resultados e capacitação individual ou para equipes focadas na excelência.
+              A Prosdocimi atua como uma parceira estratégica para empresas que buscam aprimorar seus processos internos, garantir a conformidade e aumentar a eficiência operacional. Seus principais objetivos envolvem fornecer inteligência em auditoria e consultoria para impulsionar resultados e capacitação individual ou para equipes focadas na excelência.
               </p>
               <Link to="/sobre" className="btn-primary">Conheça nossa história</Link>
             </div>

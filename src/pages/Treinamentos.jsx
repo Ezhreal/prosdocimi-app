@@ -48,7 +48,7 @@ export default function Treinamentos() {
       <section className="treinamentos-assuntos">
         <div className="container">
           <SectionLabel>Assuntos do Treinamento</SectionLabel>
-          <h2>NO que você vai aprender</h2>
+          <h2>O que você vai aprender</h2>
           <div className="treinamentos-grid-wrapper">
             <div className="treinamentos-grid-cross" />
             <div className="treinamentos-grid">

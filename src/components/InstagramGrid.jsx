@@ -9,7 +9,7 @@ export default function InstagramGrid() {
     <section className="instagram-section">
       <div className="container">
         <SectionLabel>Social Media</SectionLabel>
-        <h2 className="instagram-title">Nos siga no Instagram</h2>
+        <h2 className="instagram-title">Siga-nos no Instagram</h2>
 
         <div className="instagram-widget-wrap">
           <iframe

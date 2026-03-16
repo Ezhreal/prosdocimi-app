@@ -18,7 +18,7 @@ const SERVICE_CONFIG = {
     intro: {
       title: 'Uma consultoria feita do seu jeito',
       left: 'Oferecemos soluções para implantação, manutenção e melhoria contínua de sistemas de gestão. Você escolhe a modalidade: presencial, online ou híbrida. Contamos com a disponibilidade dos nossos consultores para apresentar as melhores respostas e realizar visitas sempre que necessário.',
-      right: 'Cada proposta é elaborada de acordo com a realidade do cliente: recursos disponíveis, prazo desejado e objetivos reais. Nossa abordagem vai além da certificação - alinhamos os resultados às expectativas das partes interessadas.',
+      right: 'Cada proposta é elaborada de acordo com a realidade do cliente, recursos disponíveis, prazo desejado e objetivos reais. Nossa abordagem vai além da certificação - alinhamos os resultados às expectativas das partes interessadas.',
       cta: 'Vamos trabalhar juntos',
     },
     how: {
@@ -39,7 +39,7 @@ const SERVICE_CONFIG = {
           text: 'Acompanhamos cada etapa da implantação, garantindo evolução real - e não apenas a aprovação em uma auditoria.',
         },
       ],
-      ctaLabel: 'Agende sua consultoria',
+      ctaLabel: 'Solicite uma proposta',
     },
     portfolio: {
       label: 'PORTFÓLIO',
@@ -76,7 +76,7 @@ const SERVICE_CONFIG = {
           text: 'Entregamos um relatório claro, com constatações objetivas e recomendações práticas para que sua empresa evolua de verdade.',
         },
       ],
-      ctaLabel: 'Fale com nossos auditores',
+      ctaLabel: 'Solicite uma proposta',
     },
     portfolio: {
       label: 'PORTFÓLIO',
@@ -124,7 +124,7 @@ function getCasesForService(heroTitle) {
           },
           {
             title: 'Resultados expressivos em tempo comprimido',
-            text: 'Em pouco mais de um ano, uma empresa sem processos estruturados alcançou certificação internacional, provando que velocidade e solidez podem coexistir com a metodologia certa.',
+            text: 'Em pouco mais de um ano, a Clam estruturou melhor seus processos, alcançou certificação internacional, provando que velocidade e solidez podem coexistir com a metodologia certa.',
           },
         ],
       },
@@ -135,7 +135,7 @@ function getCasesForService(heroTitle) {
         bullets: [
           {
             title: 'Da auditoria à transformação de processos',
-            text: 'O que começou como auditoria de SGQ evoluiu para um redesenho abrangente dos processos construtivos, de incorporação e de pós-entrega, mostrando como a porta de entrada pode levar muito além do escopo original.',
+            text: 'O que começou como auditoria de SGQ evoluiu para um redesenho abrangente de incorporação, da gestão  de saúde e segurança ocupacional e do pós-entrega, mostrando como a porta de entrada pode levar muito além do escopo original.',
           },
           {
             title: 'Dados no lugar de “achismos”',

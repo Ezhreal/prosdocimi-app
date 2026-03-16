@@ -47,11 +47,11 @@
 .hero-banner-subtitle {
   color: var(--white);
   opacity: 0.85;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 500;
-  max-width: 640px;
+  max-width: 450px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .hero-banner--full .hero-banner-inner {
