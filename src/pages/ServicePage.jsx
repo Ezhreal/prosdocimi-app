@@ -7,6 +7,26 @@ import TestimonialBlock from '../components/TestimonialBlock';
 import headerServices from '../assets/images/header-services.jpg';
 import casesPortfolio from '../assets/images/cases-portfolio.png';
 import lineBg from '../assets/images/line-background-blue.png';
+import sasFoto01 from '../assets/images/sas-foto01.jpg';
+import sasFoto02 from '../assets/images/sas-foto02.jpg';
+import sasFoto03 from '../assets/images/sas-foto03.jpg';
+import sasFoto04 from '../assets/images/sas-foto04.jpg';
+import clamFoto01 from '../assets/images/clam-foto01.jpg';
+import clamFoto02 from '../assets/images/clam-foto02.jpg';
+import clamFoto03 from '../assets/images/clam-foto03.jpg';
+import clamFoto04 from '../assets/images/clam-foto04.jpg';
+import emccampFoto01 from '../assets/images/emccamp-foto01.jpg';
+import emccampFoto02 from '../assets/images/emccamp-foto02.jpg';
+import emccampFoto03 from '../assets/images/emccamp-foto03.jpg';
+import emccampFoto04 from '../assets/images/emccamp-foto04.jpg';
+import samidFoto01 from '../assets/images/samid-foto01.jpg';
+import samidFoto02 from '../assets/images/samid-foto02.jpg';
+import samidFoto03 from '../assets/images/samid-foto03.jpg';
+import samidFoto04 from '../assets/images/samid-foto04.jpg';
+import logFoto01 from '../assets/images/log-foto01.jpg';
+import logFoto02 from '../assets/images/log-foto02.jpg';
+import logFoto03 from '../assets/images/log-foto03.jpg';
+import logFoto04 from '../assets/images/log-foto04.jpg';
 import { TEXT_LONG, TEXT_SHORT } from '../constants/texts';
 import './ServicePage.css';
 
@@ -93,6 +113,7 @@ function getCasesForService(heroTitle) {
       {
         reverse: false,
         title: 'Grupo SAS',
+        images: [sasFoto01, sasFoto02, sasFoto03, sasFoto04],
         description: 'Parceria de mais de 20 anos em consultoria e auditoria que co-construiu a evolução da governança do Grupo SAS.',
         bullets: [
           {
@@ -112,6 +133,7 @@ function getCasesForService(heroTitle) {
       {
         reverse: true,
         title: 'Clam Ambiental',
+        images: [clamFoto01, clamFoto02, clamFoto03, clamFoto04],
         description: 'Projeto focado em SSO que posicionou a Clam Ambiental como referência em gestão de riscos para grandes contratantes.',
         bullets: [
           {
@@ -131,11 +153,12 @@ function getCasesForService(heroTitle) {
       {
         reverse: false,
         title: 'Emccamp Residencial',
+        images: [emccampFoto01, emccampFoto02, emccampFoto03, emccampFoto04],
         description: 'Uma jornada que começou em auditoria e evoluiu para transformação completa de processos construtivos e de pós-entrega.',
         bullets: [
           {
             title: 'Da auditoria à transformação de processos',
-            text: 'O que começou como auditoria de SGQ evoluiu para um redesenho abrangente de incorporação, da gestão  de saúde e segurança ocupacional e do pós-entrega, mostrando como a porta de entrada pode levar muito além do escopo original.',
+            text: 'O que começou como auditoria de SGQ evoluiu para um redesenho abrangente de incorporação, da gestão de saúde e segurança ocupacional e do pós-entrega, mostrando como a porta de entrada pode levar muito além do escopo original.',
           },
           {
             title: 'Dados no lugar de “achismos”',
@@ -155,6 +178,7 @@ function getCasesForService(heroTitle) {
       {
         reverse: false,
         title: 'Samid Transportes',
+        images: [samidFoto01, samidFoto02, samidFoto03, samidFoto04],
         description: 'Evolução estruturada de sistema de gestão em transporte, unindo certificações e resultados operacionais.',
         bullets: [
           {
@@ -174,6 +198,7 @@ function getCasesForService(heroTitle) {
       {
         reverse: true,
         title: 'Log Commercial Properties',
+        images: [logFoto01, logFoto02, logFoto03, logFoto04],
         description: 'Auditoria integrada que posicionou a gestão de riscos como eixo central da tomada de decisão corporativa.',
         bullets: [
           {
@@ -257,6 +282,7 @@ export default function ServicePage({ heroTitle, sectionLabel = 'Serviços' }) {
           title={cfg.title}
           description={cfg.description}
           bullets={cfg.bullets}
+          images={cfg.images}
         />
       ))}
 

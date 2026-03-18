@@ -32,7 +32,7 @@ export default function Sobre() {
             </div>
             <div className="sobre-apresentacao-right">
               <p>
-              Fundada em 14 de outubro de 2002 em Belo Horizonte, a Prosdocimi Consultoria nasceu com um proposito claro: entregar qualidade de verdade. Ao longo de mais de duas décadas, crescemos atuando em construção civil, incorporação imobiliária, projetos de instalações complementares, incluindo infraestrutura e em consultoria, auditoria e treinamentos em sistemas de gestão.
+              Fundada em 14 de outubro de 2002 em Belo Horizonte, a Prosdocimi nasceu com um proposito claro: entregar qualidade de verdade. Ao longo de mais de duas décadas, crescemos atuando em construção civil, incorporação imobiliária, projetos de instalações complementares, incluindo infraestrutura e em consultoria, auditoria e treinamentos em sistemas de gestão.
               </p>
               <p>
               Nosso trabalho já impactou dezenas de empresas em todo o Brasil - em setores como construção civil, transportes, indústria, mineração e prestação de serviços. Somos comprometidos com a excelência técnica em tudo o que fazemos.
@@ -54,7 +54,7 @@ export default function Sobre() {
             <div className="sobre-mvv-item">
               <img src={iconVision} alt=""  />
               <h3>Visão</h3>
-              <p>Ser reconhecida como referência nacional em consultoria, auditoria e treinamentos em gestão, pela excelência técnica e pelo impacto real nos resultados dos nossos clientes.</p>
+              <p>Ser reconhecida como referência nacional em consultoria, auditoria e treinamentos em gestão, pela excelência técnica e pelo impacto real nos resultados.</p>
             </div>
             <div className="sobre-mvv-item">
               <img src={iconValues} alt=""  />

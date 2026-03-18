@@ -1,8 +1,4 @@
 import SectionLabel from './SectionLabel';
-import imgCase01 from '../assets/images/img-case01.jpg';
-import imgCase02 from '../assets/images/img-case02.jpg';
-import imgCase03 from '../assets/images/img-case03.jpg';
-import imgCase04 from '../assets/images/img-case04.jpg';
 import { TEXT_LONG, TEXT_SHORT } from '../constants/texts';
 import './CaseSection.css';
 
@@ -17,8 +13,11 @@ export default function CaseSection({
   title,
   description,
   bullets,
+  images,
 }) {
   const items = bullets && bullets.length ? bullets : defaultInsights;
+
+  const [img1, img2, img3, img4] = images && images.length ? images : [];
 
   const content = (
     <div className="case-content">
@@ -44,14 +43,14 @@ export default function CaseSection({
   const photos = (
     <div className="case-photos">
       <div className="case-photo-main">
-        <img src={imgCase01} alt="Case 1" />
+        <img src={img1} alt="Case 1" />
       </div>
       <div className="case-photo-row">
-        <img src={imgCase02} alt="Case 2" />
-        <img src={imgCase03} alt="Case 3" />
+        <img src={img2} alt="Case 2" />
+        <img src={img3} alt="Case 3" />
       </div>
       <div className="case-photo-single">
-        <img src={imgCase04} alt="Case 4" />
+        <img src={img4} alt="Case 4" />
       </div>
     </div>
   );

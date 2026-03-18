@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import SectionLabel from '../components/SectionLabel';
 import TestimonialBlock from '../components/TestimonialBlock';
+import LogoCarousel from '../components/LogoCarousel';
 import InstagramGrid from '../components/InstagramGrid';
 import imgParallax from '../assets/images/img-parallax-background.jpg';
 import douglasImg from '../assets/images/douglas-lopez-WFItslWB89M-unsplash 1.png';
@@ -109,7 +110,7 @@ export default function Home() {
               </p>
               <div className="home-sobre-mvv">
                 <p><strong>Missão.</strong><br />Incorporar, projetar, construir e propor soluções com o melhor custo-benefício - com agilidade, respeito e qualidade - em busca da satisfação de cada cliente.</p>
-                <p><strong>Visão.</strong><br />Ser reconhecida como referencia nacional em consultoria, auditoria e treinamentos em gestão, pela excelência técnica e pelo impacto real nos resultados dos nossos clientes.</p>
+                <p><strong>Visão.</strong><br />Ser reconhecida como referencia nacional em consultoria, auditoria e treinamentos em gestão, pela excelência técnica e pelo impacto real nos resultados.</p>
               </div>
               <Link to="/sobre" className="btn-outline-white">Mais sobre nós</Link>
             </div>
@@ -129,7 +130,7 @@ export default function Home() {
           Ao longo de mais de duas décadas, construímos parcerias sólidas com empresas dos mais diversos setores em todo o Brasil.
           </p>
           <div className="home-clientes-logos">
-            <p className="home-clientes-placeholder">Logos de parceiros (carrossel)</p>
+            <LogoCarousel />
           </div>
         </div>
       </section>
