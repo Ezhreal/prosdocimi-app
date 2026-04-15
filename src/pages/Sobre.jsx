@@ -1,15 +1,14 @@
-import { Link } from 'react-router-dom';
 import HeroBanner from '../components/HeroBanner';
 import SectionLabel from '../components/SectionLabel';
 import InstagramGrid from '../components/InstagramGrid';
 import imgParallax from '../assets/images/img-parallax-background.jpg';
 import citacaoBg from '../assets/images/citacao-bg-about.jpg';
-// import alexandre from '../assets/images/alexandre-placeholder-about.png';
+/* Foto do fundador — reativar junto com a coluna da imagem abaixo:
+import alexandre from '../assets/images/alexandre-placeholder-about.png';
+*/
 import iconMission from '../assets/images/icon-mission.png';
 import iconVision from '../assets/images/icon-vision.png';
 import iconValues from '../assets/images/icon-values.png';
-import iconHow from '../assets/images/icon-how-we-do.png';
-import { TEXT_LONG, TEXT_SHORT } from '../constants/texts';
 import './Sobre.css';
 
 export default function Sobre() {
@@ -108,12 +107,22 @@ export default function Sobre() {
 
       <section className="sobre-alexandre">
         <div className="container">
-          <div className="sobre-alexandre-grid sobre-alexandre-grid--no-photo">
-            {/* Foto de perfil — desativada temporariamente (reativar: descomentar import de alexandre + bloco abaixo e remover classe --no-photo)
-            <div className="sobre-alexandre-img-wrap">
-              <img src={alexandre} alt="Alexandre Prosdocimi" className="sobre-alexandre-img" />
+          {/*
+            Layout original (foto + texto em duas colunas):
+            - Na div da grid: remover " sobre-alexandre-grid--no-photo" e voltar para só "sobre-alexandre-grid"
+            - Descomentar import de alexandre no topo deste arquivo
+            - Descomentar o bloco da coluna da foto abaixo (sobre-alexandre-img-wrap)
+
+            <div className="sobre-alexandre-grid">
+              <div className="sobre-alexandre-img-wrap">
+                <img src={alexandre} alt="Alexandre Prosdocimi" className="sobre-alexandre-img" />
+              </div>
+              <div className="sobre-alexandre-content">
+                ... textos ...
+              </div>
             </div>
-            */}
+          */}
+          <div className="sobre-alexandre-grid sobre-alexandre-grid--no-photo">
             <div className="sobre-alexandre-content">
               <SectionLabel className="sobre-alexandre-label">FUNDADOR</SectionLabel>
               <h2>Alexandre Prosdocimi</h2>

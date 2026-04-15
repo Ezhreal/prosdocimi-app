@@ -258,6 +258,7 @@
   /* min-height: 400px; */
 }
 
+/* Sem coluna da foto: só texto centralizado. Com foto de volta: remover esta classe e usar grid 30% / 70% (ver comentário em Sobre.jsx). */
 .sobre-alexandre-grid--no-photo {
   grid-template-columns: 1fr;
   max-width: 960px;
