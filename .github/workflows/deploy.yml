@@ -34,9 +34,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Envia o conteúdo de ./dist para a branch gh-pages (é essa branch que o Pages usa).
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
           publish_dir: ./dist
           force_orphan: true
