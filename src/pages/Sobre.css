@@ -258,6 +258,12 @@
   /* min-height: 400px; */
 }
 
+.sobre-alexandre-grid--no-photo {
+  grid-template-columns: 1fr;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 .sobre-alexandre-img-wrap {
   position: relative;
   z-index: 2;

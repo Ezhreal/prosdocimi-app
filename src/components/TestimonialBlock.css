@@ -53,6 +53,60 @@
   color: var(--teal);
 }
 
+.testimonial-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.testimonial-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gray-pale);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--teal);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.testimonial-nav-btn:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--white);
+}
+
+.testimonial-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.testimonial-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--gray-pale);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.testimonial-dot:hover {
+  background: var(--gray-light);
+}
+
+.testimonial-dot.active {
+  background: var(--teal);
+  transform: scale(1.25);
+}
+
 @media (max-width: 768px) {
   .testimonial-inner {
     flex-direction: column;
