@@ -1,28 +1,113 @@
 .instagram-section {
-  padding: var(--section-py) 0;
-  background: #f8fafb;
+  position: relative;
+  padding: calc(var(--section-py) + 16px) 0;
+  overflow: hidden;
+}
+
+/* Fundo suave: malha discreta + leve degradê (sem “quadrinhos”). */
+.instagram-section-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(58, 166, 167, 0.09) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(5, 71, 104, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #fafcfd 0%, #f4f8f9 100%);
+  pointer-events: none;
+}
+
+.instagram-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.instagram-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(32px, 5vw, 56px);
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(28px, 4vw, 44px) clamp(24px, 4vw, 48px);
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow:
+    0 4px 24px rgba(5, 71, 104, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  border: 1px solid rgba(58, 166, 167, 0.12);
+}
+
+.instagram-panel-visual {
+  flex-shrink: 0;
+}
+
+/* Círculo com anel em degradê leve (referência ao Instagram, sem ser gritante). */
+.instagram-orbit {
+  position: relative;
+  width: clamp(120px, 22vw, 152px);
+  height: clamp(120px, 22vw, 152px);
+}
+
+.instagram-orbit-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    rgba(131, 58, 180, 0.55) 0%,
+    rgba(225, 48, 108, 0.5) 40%,
+    rgba(253, 88, 73, 0.45) 65%,
+    rgba(245, 165, 36, 0.5) 100%
+  );
+  box-shadow: 0 16px 40px rgba(225, 48, 108, 0.12);
+}
+
+.instagram-orbit-core {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: linear-gradient(165deg, #ffffff 0%, #f6fafb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(5, 71, 104, 0.06);
+}
+
+.instagram-orbit-icon {
+  color: var(--navy);
+  opacity: 0.92;
+}
+
+.instagram-panel-copy {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.instagram-panel-copy .section-label {
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 .instagram-title {
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.instagram-section .section-label {
-  text-align: center;
+  text-align: left;
+  margin-bottom: 14px;
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+  line-height: 1.25;
+  color: var(--navy);
+  font-weight: 700;
 }
 
 .instagram-lead {
-  text-align: center;
-  max-width: 520px;
-  margin: 0 auto 28px;
+  text-align: left;
+  max-width: 100%;
+  margin: 0 0 24px;
   font-size: 16px;
   color: var(--gray-text);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-.instagram-cta {
-  text-align: center;
+.instagram-actions {
+  text-align: left;
 }
 
 .instagram-btn {
@@ -31,10 +116,43 @@
   gap: 10px;
 }
 
+.instagram-hint {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--gray-light);
+  line-height: 1.5;
+  max-width: 400px;
+}
+
 @media (max-width: 768px) {
+  .instagram-panel {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px 36px;
+  }
+
+  .instagram-panel-copy {
+    text-align: center;
+  }
+
+  .instagram-panel-copy .section-label {
+    text-align: center;
+  }
+
+  .instagram-title,
+  .instagram-lead,
+  .instagram-actions {
+    text-align: center;
+  }
+
+  .instagram-hint {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .instagram-btn {
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
     justify-content: center;
   }
 }
