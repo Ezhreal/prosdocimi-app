@@ -1,27 +1,131 @@
 .instagram-section {
   padding: var(--section-py) 0;
+  background: linear-gradient(180deg, #f8fafb 0%, var(--white) 100%);
 }
 
 .instagram-title {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 12px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .instagram-section .section-label {
   text-align: center;
 }
 
-.instagram-widget-wrap {
-  max-width: 900px;
-  margin: 0 auto 32px;
-}
-
-.instagram-widget-iframe {
-  width: 100%;
-  border: none;
-  overflow: hidden;
-}
-
-.instagram-cta {
+.instagram-lead {
   text-align: center;
+  max-width: 560px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+  color: var(--gray-text);
+  line-height: 1.6;
+}
+
+.instagram-cta-card {
+  max-width: 880px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 40px 48px;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(5, 71, 104, 0.08);
+  border: 1px solid rgba(58, 166, 167, 0.15);
+}
+
+.instagram-mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.instagram-mosaic-cell {
+  aspect-ratio: 1;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+  opacity: 0.85;
+}
+
+.instagram-mosaic-cell--2,
+.instagram-mosaic-cell--5 {
+  background: linear-gradient(135deg, #054768 0%, #3aa6a7 70%);
+}
+
+.instagram-mosaic-cell--3,
+.instagram-mosaic-cell--4 {
+  background: linear-gradient(160deg, var(--teal) 0%, #022436 100%);
+  opacity: 0.75;
+}
+
+.instagram-cta-body {
+  text-align: left;
+}
+
+.instagram-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  margin-bottom: 16px;
+  transition: color 0.2s ease;
+}
+
+.instagram-handle:hover {
+  color: var(--teal);
+}
+
+.instagram-cta-text {
+  font-size: 15px;
+  color: var(--gray-text);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.instagram-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.instagram-footnote {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--gray-light);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .instagram-cta-card {
+    grid-template-columns: 1fr;
+    padding: 28px 24px;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .instagram-mosaic {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .instagram-cta-body {
+    text-align: center;
+  }
+
+  .instagram-handle {
+    justify-content: center;
+  }
+
+  .instagram-follow-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
