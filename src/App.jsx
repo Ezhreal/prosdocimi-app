@@ -9,6 +9,8 @@ import Consultoria from './pages/Consultoria';
 import Auditoria from './pages/Auditoria';
 import Treinamentos from './pages/Treinamentos';
 import Contato from './pages/Contato';
+import Termos from './pages/Termos';
+import Privacidade from './pages/Privacidade';
 
 export default function App() {
   return (
@@ -23,6 +25,8 @@ export default function App() {
           <Route path="/auditoria" element={<Auditoria />} />
           <Route path="/treinamentos" element={<Treinamentos />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/termos" element={<Termos />} />
+          <Route path="/privacidade" element={<Privacidade />} />
         </Routes>
       </main>
       <Footer />

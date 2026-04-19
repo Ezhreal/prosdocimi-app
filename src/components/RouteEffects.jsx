@@ -1,14 +1,26 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+/** Rotas só leitura: sem scroll suave nem animação de revelação (IntersectionObserver). */
+const STATIC_PAGE_PATHS = ['/termos', '/privacidade'];
+
 export default function RouteEffects() {
   const { pathname } = useLocation();
+  const isStaticLegalPage = STATIC_PAGE_PATHS.includes(pathname);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  }, [pathname]);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: isStaticLegalPage ? 'auto' : 'smooth',
+    });
+  }, [pathname, isStaticLegalPage]);
 
   useEffect(() => {
+    if (isStaticLegalPage) {
+      return undefined;
+    }
+
     const selector = [
       'main section .container .section-label',
       'main section .container h1',
@@ -66,7 +78,7 @@ export default function RouteEffects() {
       observer.disconnect();
       targets.forEach((target) => target.style.removeProperty('--reveal-delay'));
     };
-  }, [pathname]);
+  }, [pathname, isStaticLegalPage]);
 
   return null;
 }

@@ -61,6 +61,26 @@
   color: var(--gray-light);
 }
 
+.footer-legal {
+  margin-bottom: 8px;
+}
+
+.footer-legal a {
+  color: var(--gray-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: var(--teal);
+}
+
+.footer-legal-sep {
+  margin: 0 10px;
+  color: var(--gray-pale);
+  user-select: none;
+}
+
 @media (max-width: 768px) {
   .footer-top {
     flex-direction: column;

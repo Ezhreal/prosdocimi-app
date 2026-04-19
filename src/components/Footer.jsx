@@ -40,6 +40,13 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
+          <p className="footer-legal">
+            <Link to="/termos">Termos de uso</Link>
+            <span className="footer-legal-sep" aria-hidden>
+              |
+            </span>
+            <Link to="/privacidade">Política de privacidade</Link>
+          </p>
           <p>©2025 - Prosdocimi | Todos direitos reservados</p>
         </div>
       </div>
