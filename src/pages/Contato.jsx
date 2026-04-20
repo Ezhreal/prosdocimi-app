@@ -5,6 +5,9 @@ import lineBg from '../assets/images/line-background-blue.png';
 import { MessageCircle, Mail } from 'lucide-react';
 import './Contato.css';
 
+/** URL do contact-site.php na KingHost (ver kinghost/contact-site.php e .env.example). */
+const CONTACT_ENDPOINT = (import.meta.env.VITE_CONTACT_ENDPOINT ?? '').trim();
+
 const FAQ_ITEMS = [
   {
     q: 'Quais serviços a Prosdocimi oferece?',
@@ -33,9 +36,16 @@ const FAQ_ITEMS = [
 ];
 
 export default function Contato() {
+  /** Momento em que a página carregou — enviado ao servidor para barrar POSTs instantâneos de bot. */
+  const [pageOpenedAt] = useState(() => Date.now());
+
   const [form, setForm] = useState({ nome: '', telefone: '', email: '', mensagem: '' });
   const [errors, setErrors] = useState({});
   const [openFaq, setOpenFaq] = useState(null);
+  const [pending, setPending] = useState(false);
+  const [banner, setBanner] = useState(null);
+  /** Honeypot anti-bot (deve ficar vazio). */
+  const [honeypot, setHoneypot] = useState('');
 
   const validate = () => {
     const e = {};
@@ -49,16 +59,60 @@ export default function Contato() {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
+    setBanner(null);
+    if (honeypot.trim()) return;
     if (!validate()) return;
-    // enviar formulário (sem tag form - div com handlers)
-    alert('Mensagem enviada! (simulado)');
+
+    if (!CONTACT_ENDPOINT) {
+      setBanner({
+        type: 'hint',
+        text: 'Envio ainda não configurado: defina VITE_CONTACT_ENDPOINT (URL do PHP na KingHost). Enquanto isso, use o WhatsApp ou o e-mail ao lado.',
+      });
+      return;
+    }
+
+    setPending(true);
+    try {
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          nome: form.nome.trim(),
+          telefone: form.telefone.trim(),
+          email: form.email.trim(),
+          mensagem: form.mensagem.trim(),
+          website: honeypot,
+          page_opened_at: pageOpenedAt,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) {
+        setForm({ nome: '', telefone: '', email: '', mensagem: '' });
+        setErrors({});
+        setBanner({ type: 'success', text: 'Mensagem enviada. Em breve entraremos em contato.' });
+      } else {
+        const msg =
+          typeof data.message === 'string'
+            ? data.message
+            : 'Não foi possível enviar. Tente o WhatsApp ou o e-mail.';
+        setBanner({ type: 'error', text: msg });
+      }
+    } catch {
+      setBanner({
+        type: 'error',
+        text: 'Erro de conexão. Verifique a internet ou tente mais tarde.',
+      });
+    } finally {
+      setPending(false);
+    }
   };
 
   const handleChange = (field, value) => {
     setForm((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: '' }));
+    if (banner) setBanner(null);
   };
 
   return (
@@ -73,7 +127,18 @@ export default function Contato() {
       <section className="contato-form-section">
         <div className="container">
           <div className="contato-form-card">
-            <div className="contato-form-inner">
+            <form className="contato-form-inner" onSubmit={handleSubmit} noValidate>
+              <div className="contato-honeypot" aria-hidden="true">
+                <label htmlFor="website">Não preencha</label>
+                <input
+                  id="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
               <div className="contato-field contato-field-full">
                 <label htmlFor="nome">Nome *</label>
                 <input
@@ -121,10 +186,19 @@ export default function Contato() {
                 />
                 {errors.mensagem && <span className="contato-error">{errors.mensagem}</span>}
               </div>
-              <button type="button" className="btn-primary contato-submit" onClick={handleSubmit}>
-                Enviar mensagem
+              <button type="submit" className="btn-primary contato-submit" disabled={pending}>
+                {pending ? 'Enviando…' : 'Enviar mensagem'}
               </button>
-            </div>
+              {banner && (
+                <div
+                  className={`contato-form-feedback contato-form-feedback--${banner.type}`}
+                  role="status"
+                  aria-live="polite"
+                >
+                  {banner.text}
+                </div>
+              )}
+            </form>
           </div>
 
           <div className="contato-info">

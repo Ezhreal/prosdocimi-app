@@ -46,8 +46,8 @@ export default function Privacidade() {
             <li>
               <strong>Dados de navegação e dispositivo:</strong> informações técnicas usuais em conexões com sites na
               internet, como endereço IP, tipo de navegador, páginas acessadas e horários aproximados — inclusive nas
-              operações de <strong>hospedagem</strong> do site (por exemplo, em provedores como o GitHub Pages, quando
-              aplicável ao ambiente em que o site está publicado), conforme práticas do provedor de infraestrutura.
+              operações de <strong>hospedagem</strong> do site no servidor onde ele está publicado (por exemplo, provedor de
+              hospedagem como a KingHost), conforme práticas do provedor de infraestrutura.
             </li>
           </ul>
 

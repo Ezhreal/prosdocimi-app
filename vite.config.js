@@ -3,5 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/prosdocimi-app/', // MUITO IMPORTANTE para GitHub Pages
+  // Site na raiz do domínio (ex.: KingHost public_html). Para subpasta, use por exemplo base: '/pasta/'
+  base: '/',
 })
