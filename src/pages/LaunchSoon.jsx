@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { LAUNCH_AT_MS } from '../constants/launch';
+import { LAUNCH_AT_MS, getLaunchDisplay } from '../constants/launch';
 import logoWhite from '../assets/images/logo-prosdocimi-white.png';
 import './LaunchSoon.css';
 
@@ -33,6 +33,7 @@ export default function LaunchSoon({ onLaunchReached }) {
   }, [onLaunchReached]);
 
   const { days, hours, minutes, seconds } = splitRemaining(remainingMs);
+  const { dateLine, hourLabel, dateTimeAttr } = getLaunchDisplay();
 
   return (
     <div className="launch-soon">
@@ -68,13 +69,13 @@ export default function LaunchSoon({ onLaunchReached }) {
             de pensar gestão e resultados.
           </p>
           <div className="launch-soon__meta">
-            <time className="launch-soon__date" dateTime="2026-04-20T13:00">
-              Segunda · 20 de abril
+            <time className="launch-soon__date" dateTime={dateTimeAttr}>
+              {dateLine}
             </time>
             <span className="launch-soon__meta-sep" aria-hidden>
               ·
             </span>
-            <span className="launch-soon__hour">13h</span>
+            <span className="launch-soon__hour">{hourLabel}</span>
           </div>
         </header>
 

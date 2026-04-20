@@ -15,6 +15,9 @@ dist-ssr
 .env.*
 !.env.example
 
+# Senha SMTP do formulário (KingHost) — nunca versionar
+kinghost/smtp-config.local.php
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -44,7 +44,7 @@ export default function Contato() {
   const [openFaq, setOpenFaq] = useState(null);
   const [pending, setPending] = useState(false);
   const [banner, setBanner] = useState(null);
-  /** Honeypot anti-bot (deve ficar vazio). */
+  /** Honeypot anti-bot (deve ficar vazio). Nome genérico — evita autofill em "website". */
   const [honeypot, setHoneypot] = useState('');
 
   const validate = () => {
@@ -83,7 +83,7 @@ export default function Contato() {
           telefone: form.telefone.trim(),
           email: form.email.trim(),
           mensagem: form.mensagem.trim(),
-          website: honeypot,
+          fld_aux: honeypot,
           page_opened_at: pageOpenedAt,
         }),
       });
@@ -129,9 +129,10 @@ export default function Contato() {
           <div className="contato-form-card">
             <form className="contato-form-inner" onSubmit={handleSubmit} noValidate>
               <div className="contato-honeypot" aria-hidden="true">
-                <label htmlFor="website">Não preencha</label>
+                <label htmlFor="contato-fld-aux">Não preencha</label>
                 <input
-                  id="website"
+                  id="contato-fld-aux"
+                  name="company_ref"
                   type="text"
                   tabIndex={-1}
                   autoComplete="off"

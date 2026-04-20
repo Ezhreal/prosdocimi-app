@@ -1,8 +1,11 @@
 # React Router (SPA): rotas diretas (/contato, /sobre, …) voltam ao index.html
+# Importante: não reescrever /assets/ nem /api/ — senão um .js em falta devolve HTML e o browser dá SyntaxError.
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_URI} !^/assets/
+  RewriteCond %{REQUEST_URI} !^/api/
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]

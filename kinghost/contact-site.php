@@ -1,22 +1,31 @@
 <?php
 /**
- * Envio do formulário do site (React) via mail() da KingHost.
+ * Envio do formulário do site (React) na KingHost.
  *
- * Anti-bot: honeypot (campo website), limite por IP, tempo mínimo entre abrir a página e enviar.
+ * PHP 8.2+ no servidor: compatível; não exige mudanças no código. (Também roda em 7.4+.)
  *
- * 1. Envie este ficheiro para a hospedagem (ex.: public_html/api/contact-site.php).
- * 2. Ajuste MAIL_TO, MAIL_FROM e ALLOWED_ORIGINS abaixo.
- * 3. MAIL_FROM tem de ser uma conta de e-mail REAL criada no painel KingHost nesse domínio.
- * 4. No projeto React, defina VITE_CONTACT_ENDPOINT com a URL HTTPS completa deste script.
+ * Recomendado: SMTP autenticado (porta 587). O mail() nativo costuma retornar false nesta hospedagem.
+ * 1. Envie contact-site.php + SmtpKinghost.php para public_html/api/
+ * 2. Copie smtp-config.example.php → smtp-config.local.php e preencha a senha da caixa MAIL_FROM.
+ * 3. MAIL_FROM = conta de e-mail real no painel (a mesma senha vai em smtp-config.local.php).
+ * 4. Host SMTP: smtp. + domínio do e-mail (ex.: smtp.prosdocimiconsultoria.com.br).
  *
- * Opcional mais tarde: Cloudflare Turnstile ou Google reCAPTCHA v3 (exige chaves e verificação por API).
+ * Anti-bot: honeypot, limite por IP, tempo mínimo entre abrir a página e enviar.
+ *
+ * Opcional: Cloudflare Turnstile ou reCAPTCHA v3.
  */
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/SmtpKinghost.php';
+
 // --- configurar ---
-const MAIL_TO   = 'consultoria@prosdocimiconsultoria.com.br';
-const MAIL_FROM = 'noreply@prosdocimiconsultoria.com.br'; // criar esta caixa na KingHost (ou usar outra existente)
+/** Destinatários que recebem cada envio do formulário. */
+const MAIL_TO = [
+    'ronaldogademar@gmail.com',
+    'alexandre@prosdocimiconsultoria.com.br',
+];
+const MAIL_FROM = 'no-reply@prosdocimiconsultoria.com.br'; // mesma conta no painel KingHost + senha em smtp-config.local.php
 const FROM_NAME = 'Site Prosdocimi';
 
 /** Origens permitidas para CORS (URL exata, sem barra final). Inclua www e não-www se usar os dois. */
@@ -25,18 +34,27 @@ const ALLOWED_ORIGINS = [
     'https://prosdocimiconsultoria.com.br',
     'http://localhost:5173',
     'http://127.0.0.1:5173',
+    'http://localhost:4173',
+    'http://127.0.0.1:4173',
 ];
 
-/** Máximo de envios por IP por janela de tempo (spam). */
-const RATE_LIMIT_MAX = 5;
+/** Máximo de envios por IP por janela (spam). Pode subir com moderação; muito alto facilita abuso. */
+const RATE_LIMIT_MAX = 15;
 /** Janela em segundos para RATE_LIMIT_MAX. */
 const RATE_LIMIT_WINDOW = 600;
 
-/** Tempo mínimo (ms) entre page_opened_at e o envio — bots costumam enviar quase instantâneo. */
-const MIN_SUBMIT_DELAY_MS = 2500;
+/** Tempo mínimo (ms) na página antes de enviar. Muito baixo (<~1s) favorece bots. */
+const MIN_SUBMIT_DELAY_MS = 1500;
 /** Tempo máximo (ms) — evita timestamps antigos reaproveitados. */
 const MAX_SUBMIT_DELAY_MS = 7200000;
 // --- fim configurar ---
+
+function prosdocimi_domain_from_email(string $email): string
+{
+    $p = strrpos($email, '@');
+
+    return $p !== false ? substr($email, $p + 1) : 'localhost';
+}
 
 function client_ip(): string
 {
@@ -108,8 +126,8 @@ if (!is_array($data)) {
     exit;
 }
 
-// Honeypot anti-bot (campo oculto "website" — humanos não preenchem)
-if (!empty($data['website'] ?? '')) {
+// Honeypot (campo oculto; nome genérico no JSON para não ser preenchido por extensões/autofill)
+if (!empty(trim((string) ($data['fld_aux'] ?? '')))) {
     echo json_encode(['success' => true]);
     exit;
 }
@@ -167,22 +185,117 @@ $body .= "Telefone: {$telefone}\r\n";
 $body .= "E-mail: {$email}\r\n\r\n";
 $body .= "Mensagem:\r\n" . $mensagem . "\r\n";
 
-$headers = [];
-$headers[] = 'MIME-Version: 1.0';
-$headers[] = 'Content-Type: text/plain; charset=UTF-8';
-$fromName = function_exists('mb_encode_mimeheader')
-    ? mb_encode_mimeheader(FROM_NAME, 'UTF-8', 'Q')
-    : FROM_NAME;
-$headers[] = 'From: ' . $fromName . ' <' . MAIL_FROM . '>';
-$headers[] = 'Reply-To: ' . $email;
+$smtpPass = '';
+$smtpDebug = false;
+$smtpHostOverride = '';
+$smtpPort = 587;
+$smtpImplicitTls = false;
+$smtpSslRelaxed = false;
+$smtpFile = __DIR__ . '/smtp-config.local.php';
+if (is_readable($smtpFile)) {
+    $smtpCfg = include $smtpFile;
+    if (is_array($smtpCfg)) {
+        if (isset($smtpCfg['password']) && is_string($smtpCfg['password'])) {
+            $smtpPass = trim($smtpCfg['password']);
+        }
+        if (!empty($smtpCfg['debug'])) {
+            $smtpDebug = true;
+        }
+        if (isset($smtpCfg['smtp_host']) && is_string($smtpCfg['smtp_host']) && trim($smtpCfg['smtp_host']) !== '') {
+            $smtpHostOverride = trim($smtpCfg['smtp_host']);
+        }
+        if (isset($smtpCfg['smtp_port'])) {
+            $p = (int) $smtpCfg['smtp_port'];
+            if ($p > 0 && $p <= 65535) {
+                $smtpPort = $p;
+            }
+        }
+        if (!empty($smtpCfg['smtp_implicit_ssl'])) {
+            $smtpImplicitTls = true;
+        }
+        if (!empty($smtpCfg['smtp_ssl_relaxed'])) {
+            $smtpSslRelaxed = true;
+        }
+    }
+}
 
-$subjectEncoded = '=?UTF-8?B?' . base64_encode($subject) . '?=';
-// -f define o remetente do envelope (muitas hospedagens exigem para mail() funcionar)
-$sent = @mail(MAIL_TO, $subjectEncoded, $body, implode("\r\n", $headers), '-f ' . MAIL_FROM);
+if ($smtpImplicitTls && $smtpPort === 587) {
+    $smtpPort = 465;
+}
+
+$domain = prosdocimi_domain_from_email(MAIL_FROM);
+$smtpHost = $smtpHostOverride !== '' ? $smtpHostOverride : ('smtp.' . $domain);
+
+$sent = false;
+$smtpErr = '';
+
+if ($smtpPass !== '') {
+    $smtpRes = ProsdocimiSmtp::send(
+        $smtpHost,
+        $smtpPort,
+        MAIL_FROM,
+        $smtpPass,
+        MAIL_FROM,
+        FROM_NAME,
+        MAIL_TO,
+        $email,
+        $subject,
+        $body,
+        $domain,
+        $smtpImplicitTls,
+        $smtpSslRelaxed
+    );
+    $sent = $smtpRes['ok'];
+    $smtpErr = $smtpRes['error'];
+} else {
+    $headers = [];
+    $headers[] = 'MIME-Version: 1.0';
+    $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+    $fromName = function_exists('mb_encode_mimeheader')
+        ? mb_encode_mimeheader(FROM_NAME, 'UTF-8', 'Q')
+        : FROM_NAME;
+    $headers[] = 'From: ' . $fromName . ' <' . MAIL_FROM . '>';
+    $headers[] = 'Reply-To: ' . $email;
+    $msgId = '<' . time() . '.' . bin2hex(random_bytes(6)) . '@' . $domain . '>';
+    $headers[] = 'Message-ID: ' . $msgId;
+    $subjectEncoded = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+    $hdrBlock = implode("\r\n", $headers);
+    $sent = true;
+    foreach (MAIL_TO as $toAddr) {
+        if (!@mail($toAddr, $subjectEncoded, $body, $hdrBlock, '-f ' . MAIL_FROM)) {
+            $sent = false;
+            break;
+        }
+    }
+}
 
 if (!$sent) {
+    error_log(
+        'Prosdocimi contact-site: envio falhou. mail_fallback=' . ($smtpPass === '' ? '1' : '0')
+        . ' smtp_err=' . $smtpErr
+        . ' host=' . $smtpHost . ':' . $smtpPort . ($smtpImplicitTls ? ' ssl' : '')
+        . ' dest=' . implode(',', MAIL_TO)
+    );
     http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Não foi possível enviar agora. Tente o WhatsApp ou o e-mail.']);
+    $out = [
+        'success' => false,
+        'message' => 'Não foi possível enviar agora. Tente o WhatsApp ou o e-mail.',
+    ];
+    if ($smtpDebug) {
+        $out['debug'] = [
+            'smtp_password_configured' => $smtpPass !== '',
+            'smtp_host' => $smtpHost,
+            'smtp_error' => $smtpErr,
+            'mail_from' => MAIL_FROM,
+            'hint' => $smtpPass === ''
+                ? 'Defina password em smtp-config.local.php'
+                : 'greeting = SSL/banner; EHLO 0 = sem resposta HELO; TLS = STARTTLS 587; AUTH/RCPT = credenciais/destino. Teste: smtp_ssl_relaxed => true (só debug).',
+            'smtp_port' => $smtpPort,
+            'smtp_implicit_ssl' => $smtpImplicitTls,
+            'smtp_ssl_relaxed' => $smtpSslRelaxed,
+        ];
+    }
+    echo json_encode($out);
     exit;
 }
 
